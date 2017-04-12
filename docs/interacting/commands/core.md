@@ -32,7 +32,7 @@ Arguments:
 ```
 
 Values:
-- **command**: command to execute including its arguments,  ex: 'ls -l /root'
+- **command**: Command to execute, including its arguments, e.g. 'ls -l /root'
 - **directory**: Directory where to execute the command
 - **env**: Comma separated environment values, in following format: `"ENV1": "VALUE1", "ENV2": "VALUE2"`
 - **stdin-data**: Data to pass to executable over stdin
