@@ -24,18 +24,16 @@ Executes a given command.
 Arguments:
 ```javascript
 {
-	"name": "{command-label}",
+	"command": "{command}",
 	"dir": "{directory}",
-	"args": "{command}",
 	"env": "{environment-variables}",
 	"stdin": "{stdin-data}"
 }
 ```
 
 Values:
-- **command-label**: Label for the command to execute, the actual command is in  **args**
+- **command**: command to execute including its arguments,  ex: 'ls -l /root'
 - **directory**: Directory where to execute the command
-- **command**: Command + arguments in following format: `["command", "arguments"]`
 - **env**: Comma separated environment values, in following format: `"ENV1": "VALUE1", "ENV2": "VALUE2"`
 - **stdin-data**: Data to pass to executable over stdin
 
