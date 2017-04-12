@@ -37,7 +37,7 @@
   * [OVS](networking/ovs.md)
   * [ZeroTier](networking/zerotier.md)
 * [Storage](storage/storage.md)
-  * [Creating Disks](storage/creating.md)
+  * [Managing Disks](storage/managing.md)
 * [Containers](containers/containers.md)
   * [Creating Containers](containers/creating.md)
 * [Virtual Machines](vms/vms.md)
