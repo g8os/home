@@ -34,7 +34,7 @@
   * [Merging Flists](flists/merging.md)
   * [G8OS Hub](flists/hub.md)
 * [Networking](networking/networking.md)
-  * [VXLAN](networking/ovs.md)
+  * [OVS](networking/ovs.md)
   * [ZeroTier](networking/zerotier.md)
 * [Storage](storage/storage.md)
   * [Creating Disks](storage/creating.md)
