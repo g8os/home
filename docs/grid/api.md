@@ -20,7 +20,7 @@ This [link](https://rawgit.com/g8os/grid/1.1.0-alpha/raml/api.html) shows all th
     ```GET http://127.0.0.1:8080/nodes```
  
      Response:
-     ```
+     ```json
        [
          {
            "hostname": "core0node",
@@ -35,7 +35,7 @@ This [link](https://rawgit.com/g8os/grid/1.1.0-alpha/raml/api.html) shows all th
     `GET http://127.0.0.1:8080/nodes/525400123456/mem`
     
     Response:
-     ```
+     ```json
      {
        "active": 197136384,
        "available": 1454743552,
@@ -56,7 +56,7 @@ This [link](https://rawgit.com/g8os/grid/1.1.0-alpha/raml/api.html) shows all th
  
     `POST http://127.0.0.1:8080/nodes/525400123456/reboot`
     
-    Response: 204   
+    Response: 204 No Content
  
  * Listing containers of node 525400123456:
      
@@ -64,7 +64,7 @@ This [link](https://rawgit.com/g8os/grid/1.1.0-alpha/raml/api.html) shows all th
     
     Response:
     
-    ```
+    ```json
     [
       {
         "flist": "http://192.168.20.132:8080/deboeckj/lede-17.01.0-r3205-59508e3-x86-64-generic-rootfs.flist",
@@ -80,7 +80,8 @@ This [link](https://rawgit.com/g8os/grid/1.1.0-alpha/raml/api.html) shows all th
     `POST http://127.0.0.1:8080/nodes/525400123456/containers`
     
     Payload:
-    ```
+    
+    ```json
     {
       "nics":[
         {
@@ -112,7 +113,7 @@ This [link](https://rawgit.com/g8os/grid/1.1.0-alpha/raml/api.html) shows all th
     }  
     ```
     
-    Response: 204
+    Response: 204 No Content
     
   
  * List jobs on container vfw_22:
@@ -120,7 +121,7 @@ This [link](https://rawgit.com/g8os/grid/1.1.0-alpha/raml/api.html) shows all th
      `GET http://127.0.0.1:8080/nodes/525400123456/containers/vfw_21/jobs`
      
      Response:
-     ```
+     ```json
      [
        {
          "id": "f3976780-f369-45df-ab54-206149dc000e",
@@ -134,6 +135,52 @@ This [link](https://rawgit.com/g8os/grid/1.1.0-alpha/raml/api.html) shows all th
  
     `DELETE http://127.0.0.1:8080/nodes/525400123456/containers/vfw_21/jobs/f3976780-f369-45df-ab54-206149dc000e`
     
-    Response: 204
+    Response: 204 No Content
  
+ 
+ * List processes on container vfw_22:
+ 
+    `GET http://127.0.0.1:8080/nodes/525400123456/containers/vfw_22/processes`
+    
+    Response:
+    
+    ```json
+    [
+      {
+        "cmdline": "/coreX -core-id 10 -redis-socket /redis.socket -reply-to corex:results -hostname vfw_22",
+        "cpu": {
+          "guestnice": 0,
+          "idle": 0,
+          "iowait": 0,
+          "irq": 0,
+          "nice": 0,
+          "softirq": 0,
+          "steal": 0,
+          "stolen": 0,
+          "system": 0,
+          "user": 0.04
+        },
+        "pid": 1,
+        "rss": 3399680,
+        "swap": 0,
+        "vms": 8163328
+      }
+    ]
+
+    ```
+ * Start a process on container vfw_22:
+ 
+    `POST http://127.0.0.1:8080/nodes/525400123456/containers/vfw_22/processes`
+    
+    Payload:
+    ```json
+    {
+       "name": "/bin/dnsmasq",
+       "pwd": "",
+       "args": ["--conf-file=/etc/dnsmasq.conf", "-d"],
+       "env": []
+    }
+    ```
+    Response: 202 Accepted
+    
  
