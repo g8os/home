@@ -1,12 +1,71 @@
 # Open vSwitch (OVS) Networking
 
-Both containers and KVM domain creations accept attaching `nics` to them with different types.
+Both the command for creating containers and the command for creating (KVM) virtual machines allow to attach different types of networks through the `nics` argument.
 
-## Containers
+Following network types are supported through the create commands:
 
-`containers.create` method accepts options `nics` argument which is a list of `nic` objects.
+| Network Type   | Containers | KVM        |
+|:---------------|:----------:|:----------:|
+|default         | X          | X          |
+|bridge          | X          | X          |
+|ZeroTier        | X          |            |
+|VLAN            | X          | X          |
+|VXLAN           | X          | X          |
 
-Each object is defined as:
+> Note that while you cannot attach a ZeroTier network through the `Create` command for virtual machines, that you can of course always install the ZeroTier binaries manually in order to connect to a ZeroTier network once the virtual machine is running.
+
+For the VLAN and the VXLAN network types an Open vSwitch network is required.
+
+Below we discuss:
+
+- [How to setup a Open vSwitch network](#ovs-setup)
+- [How to connect to an Open vSwitch network](#ovs-connect)
+
+<a id="ovs-setup"></a>
+## How to setup a Open vSwitch network
+
+Setting up an Open vSwitch (OVS) network is achieved by starting an OVS container must be running (and properly) configured.
+
+In order to start an OVS through the Python client execute:
+
+```python
+ovs = cl.container.create('https://hub.gig.tech/gig-official-apps/ovs.flist',
+	host_network=True,
+	storage='ardb://hub.gig.tech:16379',
+	tags=['ovs'])
+```
+
+Note the following:
+- We're using the `ovs.flist` flist here, for more information on how to build it see the [g8os/ovs-plugin](https://github.com/g8os/ovs-plugin) repository on Github
+- `tags` must be `ovs` and only one container with OVS tag must exist. The system won't prevent you from creating as many containers with that tag but it will cause setup issues later
+- `host_network` must be set to `True`
+
+Once the OVS container has started, you can use `container.client` to further configure your networking infrastructure. A minimal bootstrap should at least contain the following:
+
+```python
+ovscl = cl.container.client(ovs)
+ovscl.json('ovs.bridge-add', {"bridge": "backplane"})
+ovscl.json('ovs.vlan-ensure', {'master': 'backplane', 'vlan': 2313, 'name':'vxbackend'})
+# the vlan tag can be any reserved value for vxbackend
+```
+
+> The above calls will make sure we have `backplane` vswitch, and `vxbackend` vswitch but it doesn't connect the backplane to the internet, make sure to check [ovs-plugin](https://github.com/g8os/ovs-plugin) for more info on how to create bonds or add links to the backplane
+
+Once your infrastructure for OVS is bootstrapped you can simple use the VLAN and VXLAN types as explained next.
+
+
+<a id="ovs-connect"></a>
+## How to connect to an Open vSwitch network
+
+Below we discuss:
+- [How to connect the OVS network to a container](#container)
+- [How to connect the OVS network to a KVM domain](#kvm)
+
+<a id="container"></a>
+### Container
+
+Connecting a container to a OVS network is achieved through the `nics` argument of the  `container.create` command. This `nics` argument is actually a list of `nic` objects. Each object is defined as:
+
 ```python
 nic = {
 	"type": nic_type, # type can be one of (default, bridge, vlan, vxlan, zerotier)
@@ -18,7 +77,8 @@ nic = {
 
 Values:
 - The `id` is ignored in case of type `default`, and equal to the `vlan` tag in case of VLAN type, `vxlan id` in case of vxlan type, and `zerotier` network id in case of the ZeroTier type., or the bridge name in case of `bridge` type
-- The `config` object can has all or any of the following fields
+- The `config` object can have all or any of the following fields:
+
   ```python
   config = {
 	  "cidr": "ip/mask-bit",
@@ -28,44 +88,11 @@ Values:
   }
   ```
 
-Note that the config object is only honored in `bridge`, `vlan` and `vxlan` types only.
+> Note that the config object is only honored in `bridge`, `vlan` and `vxlan` types only.
 
+<a id="kvm"></a>
 ## KVM
 
 Exactly the same as containers except for the following
 - No support for ZeroTier networking mode, yet a VM admin can himself start the ZeroTier binaries to join a network
 - No config object support
-
-> Both VLAN, and VXLAN network modes require `OVS` container to be running for them to work
-
-# Using OVS networking modes (vlan, and vxlan)
-
-For vlan, and vxlan modes to work, an `ovs` container must be running (and properly) configured on the system before other containers or KVM domains make use of OVS advanced networking.
-
-## Start OVS
-```python
-ovs = cl.container.create('https://hub.gig.tech/gig-official-apps/ovs.flist',
-	host_network=True,
-	storage='ardb://hub.gig.tech:16379',
-	tags=['ovs'])
-```
-
-Note the following:
-- `tags` must be has `ovs` and only ONE container with OVS tag must exist. The system won't prevent you from creating as many containers with that tag but it will cause setup issues later
-- `host_network` must be set to `True`
-
-Once the container has started, u can use the container client to further configure your networking infra structure. A minimal bootstrap should at least contain the following:
-
-```python
-ovscl = cl.container.client(ovs)
-ovscl.json('ovs.bridge-add', {"bridge": "backplane"})
-ovscl.json('ovs.vlan-ensure', {'master': 'backplane', 'vlan': 2313, 'name':'vxbackend'})
-# the vlan tag can be any reserved value for vxbackend
-```
-
-> The above calls will make sure we have `backplane` vswitch, and `vxbackend` vswitch but it
-doesn't connect the backplane to the internet, make sure to read [ovs-plugin](https://github.com/g8os/ovs-plugin)
-for more info on how to create bonds or add links to the backplane
-
-Once your infra structure for OVS is bootstrapped you can simple use the vlan and vxlan types
-as explained above.
