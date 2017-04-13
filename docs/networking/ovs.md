@@ -6,14 +6,14 @@ Both containers and kvm domain creations accept attaching `nics` to them with di
 each object is defined as 
 ```python
 nic = {
-	"type": nic_type, # type can be one of (default, vlan, vxlan, zerotier)
+	"type": nic_type, # type can be one of (default, bridge, vlan, vxlan, zerotier)
 	"id": net_id,
 	"hwaddr": mac_addr, # optional
 	"config": { } #optional config
 }
 ```
 The `id` is ignored in case of type `default`, and equal to the `vlan` tag in case of vlan type,
-`vxlan id` in case of vxlan type, and `zerotier` network id in case of the zerotier type.
+`vxlan id` in case of vxlan type, and `zerotier` network id in case of the zerotier type., or the bridge name in case of `bridge` type
  
 The `config` object can has all or any of the following fields
 ```python
@@ -24,7 +24,7 @@ config = {
 	"dns": ["nameserver1", "nameserver2"]
 }
 ```
-Note, the config object is only honored in `vxlan` and `vxlan` types only
+Note, the config object is only honored in `bridge`, `vlan` and `vxlan` types only
 
 ## KVM
 Exactly the same as containers except for the following
