@@ -1,5 +1,7 @@
 # Booting G8OS on a VM using QEMU
 
+The following command will start a VM with 5 disks attached to it:
+
 ```bash
 qemu-system-x86_64 -kernel g8os-kernel.efi \
    -m 2048 -enable-kvm -cpu host \
@@ -13,3 +15,5 @@ qemu-system-x86_64 -kernel g8os-kernel.efi \
    -serial null -serial mon:stdio \
    -append 'ays=localhost:5000'
 ```
+
+Note the `-append` where we specify the address of an AYS server. This is used for auto discovery of the node when they boot.
