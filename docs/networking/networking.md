@@ -1,4 +1,4 @@
 # Networking
 
-* [OVS](ovs.md)
+* [Open vSwitch](ovs.md)
 * [ZeroTier](zerotier.md)

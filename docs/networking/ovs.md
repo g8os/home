@@ -1,9 +1,11 @@
-# OpenVSwitch networking 
-Both containers and kvm domain creations accept attaching `nics` to them with different types
+# Open vSwitch Networking
+
+Both containers and KVM domain creations accept attaching `nics` to them with different types.
 
 ## Containers
+
 `containers.create` method accepts options `nics` argument which is a list of `nic` object
-each object is defined as 
+each object is defined as
 ```python
 nic = {
 	"type": nic_type, # type can be one of (default, bridge, vlan, vxlan, zerotier)
@@ -14,12 +16,12 @@ nic = {
 ```
 The `id` is ignored in case of type `default`, and equal to the `vlan` tag in case of vlan type,
 `vxlan id` in case of vxlan type, and `zerotier` network id in case of the zerotier type., or the bridge name in case of `bridge` type
- 
+
 The `config` object can has all or any of the following fields
 ```python
 config = {
 	"cidr": "ip/mask-bit",
-	"dhcp": ture or false, 
+	"dhcp": ture or false,
 	"gw": "gateway-address",
 	"dns": ["nameserver1", "nameserver2"]
 }
@@ -32,7 +34,7 @@ Exactly the same as containers except for the following
 - No config object support.
 
 > Both VLAN, and VXLAN network modes require `OVS` container to be running for them to work
- 
+
 # Using OVS networking modes (vlan, and vxlan)
 For vlan, and vxlan modes to work, an `ovs` container must be running (and properly) configured on the system
 before other containers or kvm domains make use of ovs advanced networking.
@@ -50,7 +52,7 @@ Note the following:
  won't prevent you from creating as many containers with that tag but it will cause setup issues later
 - `host_network` must be set to `True`
 
-Once the container has started, u can use the container client to further configure your 
+Once the container has started, u can use the container client to further configure your
 networking infra structure. A minimal bootstrap should at least contain the following:
 
 ```python
@@ -60,9 +62,9 @@ ovscl.json('ovs.vlan-ensure', {'master': 'backplane', 'vlan': 2313, 'name':'vxba
 # the vlan tag can be any reserved value for vxbackend
 ```
 
-> The above calls will make sure we have `backplane` vswitch, and `vxbackend` vswitch but it 
+> The above calls will make sure we have `backplane` vswitch, and `vxbackend` vswitch but it
 doesn't connect the backplane to the internet, make sure to read [ovs-plugin](https://github.com/g8os/ovs-plugin)
-for more info on how to create bonds or add links to the backplane 
+for more info on how to create bonds or add links to the backplane
 
 Once your infra structure for ovs is bootstrapped you can simple use the vlan and vxlan types
 as explained above.
