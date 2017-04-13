@@ -6,10 +6,10 @@ This [link](https://rawgit.com/g8os/grid/1.1.0-alpha/raml/api.html) shows all th
 
 The APIs are split into two categories:
 
-1) APIs that use Direct Access to return data/perform actions: this is done by using the [Go Client](https://github.com/g8os/go-client) of core0 to directly talk to the nodes and containers
-2) APIs that use AYS to return data/perform actions: this is done by using the [AYS API](https://rawgit.com/Jumpscale/jumpscale_core8/8.2.0/specs/ays_api.html) to contact the AYS server
+- APIs that use **Direct Access** to return data/perform actions: this is done by using the [Go Client](https://github.com/g8os/go-client) of core0 to directly talk to the nodes and containers
+- APIs that use **AYS** to return data/perform actions: this is done by using the [AYS API](https://rawgit.com/Jumpscale/jumpscale_core8/8.2.0/specs/ays_api.html) to contact the AYS server
 
-The following are some examples for Grid API use cases:
+The following are some examples on how to use the Grid API, all using the direct access method:
 
 - [List core0 nodes](#list-nodes)
 - [Get memory information of a node](#memory-info)
