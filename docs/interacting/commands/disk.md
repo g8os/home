@@ -14,7 +14,7 @@ Available commands:
 <a id="list"></a>
 ## disk.list
 
-List all available block devices, similar to the `lsblk` command. It takes no arguments.
+Lists all available block devices, similar to the `lsblk` command. It takes no arguments.
 
 
 <a id="mktable"></a>
@@ -32,7 +32,7 @@ Arguments:
 
 Values:
 - **disk**: Full device path like `/dev/sda`
-- **table_type**: Any value that is supported by `parted mktable`.
+- **table_type**: Any value that is supported by `parted mktable`
 
 
 <a id="mkpart"></a>
@@ -52,13 +52,13 @@ Values:
 - **disk**: Full device path like `/dev/sda`.
 - **part-type**: Partition type as accepted by `parted mkpart`, e.g. `primary`
 - **start**: Partition start as accepted by `parted mkpart`, e.g. `1`
-- **end**: partition end as accepted by `parted mkpart`, e.g. `100%`
+- **end**: Partition end as accepted by `parted mkpart`, e.g. `100%`
 
 
 <a id="getinfo"></a>
 ## disk.getinfo
 
-Get more info about a disk or a disk partition, return as a dict with {"blocksize", "start", "size", and "free" sections}.
+Gets more info about a disk or a disk partition, return as a dict with {"blocksize", "start", "size", and "free" sections}.
 
 Arguments:
 ```javascript
@@ -94,7 +94,7 @@ Values:
 <a id="mount"></a>
 ## disk.mount
 
-Mount partition on target.
+Mounts partition on target.
 
 Arguments:
 ```javascript

@@ -66,7 +66,7 @@ Setting up a Grid takes three steps:
   - **{repo-name}**: Any name you choose for your AYS repository
   - **{git-server}**: https address of your repository on a Git server, e.g. `http://github.com/user/repo`
 
-* Install auto node discovery service
+* Install the **auto node discovery** service
 
   Add the following blueprint in the `blueprints` directory of your AYS repository:
 

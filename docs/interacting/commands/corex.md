@@ -21,10 +21,17 @@ Arguments:
   'root': {root_url},
   'mount': {mount},
   'host_network': {host_network},
-  'network': {
-      'zerotier': {zerotier},
-      'bridge': {bridge},
-  },
+  'nics': [{
+      'type': {nic_type},
+      'id': {id},
+      'hwaddr': {hwaddr},
+      'config': {
+          'dhcp': {dfhcp},
+          'cidr': {cidr},
+          'gateway': {gateway},
+          'dns': {dns}
+        }
+  }],
   'port': {port},
   'hostname': {hostname},
   'storage': {storage}
@@ -33,26 +40,35 @@ Arguments:
 
 Values:
 
-- **root_url**: URL of the flist for the root filesystem, e.g. `https://hub.gig.tech/gig-official-apps/ubuntu1604.flist`
+- **{root_url}**: URL of the flist for the root filesystem, e.g. `https://hub.gig.tech/gig-official-apps/ubuntu1604.flist`
 
-- **mount**: Dict of `('{host_source}': '{container_target}')` pairs, each mounting a directory on the host or a flist (specified by its URL) to the container
+- **{mount}**: Dict of `('{host_source}': '{container_target}')` pairs, each mounting a directory on the host or a flist (specified by its URL) to the container
 
-- **host_network**: True or false, specifying whether the container should share the same network stack as the host
+- **{host_network}**: True or false, specifying whether the container should share the same network stack as the host
   - If True, all below ZeroTier, bridge and port arguments are ignored
 
-- **zerotier**: Optional ZeroTier network ID to join
+- **nics**: Dict of "nic" objects, defined by following values:
 
-- **bridge**: Dict of `('{bridge_name}': '{network_setup}')` pairs where `{network_setup}` can be one of the following:
-  - `none` or an empty string: No IP address is set on the link
-  - `dhcp`: Runs the `Udhcpc` DHCP client on the container link, of course this will only work if the bridge is created with `dnsmasq` networking
-  - `CIDR`: Assigns a static IP address to the link
+  - **{nic_type}**: Type of network, possible values are:
+    - `default`
+    - `bridge`
+    - `zerotier`
+    - `vlan` (only supported by Open vSwitch)
+    - `vxlan` (only supported by Open vSwitch)
 
-  Example: `bridge=[('br0', '127.0.0.100/24'), ('br1', 'dhcp')]`
+  - **{id}**: (optional) Depending on the value for {nice_type}:
+    - Name of the bridge
+    - ZeroTier network id
+    - VLAM tag
+    - VXLAM network identifier (VNID)
 
-- **hostname**: Specific hostname you want to give to the container, if None it will automatically be set to core-x, x being the ID of the container
+  - **{hwaddr}**: (optional) MAC address
 
-- **storage**: URL to the ARDB storage cluster, e.g. `ardb://hub.gig.tech:16379`
-  - If not provided the default one from the Core0 configuration will be used
+  - **{config}**: Only relevant for VLAN and VXLAN types:  
+    - `{dhcp}`: True/False. Runs the `Udhcpc` DHCP client on the container link, of course this will only work if the bridge is created with `dnsmasq` networking
+    - `{CIDR}`: Assigns a static IP address to the link
+    - `{gateway}`: gateway
+    - `{dns}`: dns
 
 - **port**: Dict of `{host_port}: {container_port}` pairs
 
@@ -61,12 +77,28 @@ Values:
 - **hostname**: Specific hostname you want to give to the container
   - If none it will automatically be set to core-x, x being the ID of the container
 
+- **storage**: URL to the ARDB storage cluster, e.g. `ardb://hub.gig.tech:16379`
+  - If not provided the default one from the Core0 configuration will be used
+
 
 <a id="list"></a>
 ## corex.list
 
 Lists all available containers on a host. It takes no arguments.
 
+
+
+<a id="find"></a>
+## corex.find
+
+Finds containers that matches set of tags.
+
+Arguments:
+```javascript
+{
+    "tags": {tags},
+}
+```
 
 <a id="client"></a>
 ### corex.client
@@ -80,7 +112,6 @@ Returns all container info.
 Destroys the container and stops the core processes. It takes a mandatory container ID.
 
 Arguments:
-
 ```javascript
 {
     "container": container_id,
