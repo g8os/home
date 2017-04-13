@@ -1,8 +1,8 @@
 # Grid Development Setup
 
-The setup consists of three elements:
+Setting up a Grid takes three steps:
 
-- [Setup AYS Server](#setup-ays)
+- [Setup the AYS Server](#setup-ays)
 - [Create the G8OS nodes](#create-nodes)
 - [Setup the Grid API Server](#grid-api)
 
@@ -10,7 +10,9 @@ The setup consists of three elements:
 <a id="setup-ays"></a>
 ## Setup the AYS Server
 
-* Install JumpScale:
+* Install JumpScale
+
+  On the machine where you want to run the AYS Server execute:
 
   ```shell
   cd $TMPDIR
@@ -20,58 +22,74 @@ The setup consists of three elements:
   bash install.sh
   ```
 
-* Install g8core Python client:
+  For more details on installing JumpScale see the [JumpScale documentation](https://gig.gitbooks.io/jumpscale-core8/content/Installation/JSDevelopment.html).
 
-  This is the client the AYS uses to communicate to core0.
+* Install the Python client
+
+  `g8core` is the Python client that AYS uses to interact with a G8OS node.
+
+  In order to install it execute:
 
   ```shell
   pip3 install g8core
   ```
 
-* Create the AYS repository:
+* Get the AYS actor templates for setting up a Grid
 
-  This is the repository that will contain any blueprints executed by the API or executed manually for our grid setup.
+  The AYS actor templates for setting up all the Grid server components are available in the `templates` directory of the grid server repository on GitHub.
 
-  ```shell
-  ays repo create --name objstor --git http://github.com/user/repo
-  ```
-
-* Clone the AYS templates:
-
- This repo contains a dir templates which includes all the schemas and actions for our ays services.
+  In order to clone this repository execute:
 
   ```shell
   cd /opt/code/
   git clone https://github.com/g8os/grid/
   cd grid
   git checkout 1.1.0-alpha
-  ays reload
   ```
 
-* Install auto node discovery service:
+* Start the AYS server
 
-  Add the following blueprint in any file under the blueprints dir of your ays repo.
-  This blueprint will install the auto discovery service which will auto discover all the core0 nodes.
+  Execute:
+  ```shell
+  ays start
+  ```
+
+* Create a new AYS repository
+
+  This is the AYS repository that you will use for the blueprints to setup the grid.
 
   ```shell
+  ays repo create --name {repo-name} --git {git-server}
+  ```
+
+  Values:
+  - **{repo-name}**: Any name you choose for your AYS repository
+  - **{git-server}**: https address of your repository on a Git server, e.g. `http://github.com/user/repo`
+
+* Install auto node discovery service
+
+  Add the following blueprint in the `blueprints` directory of your AYS repository:
+
+  ```
   bootstrap.g8os__grid1:
 
   actions:
     - action: install
   ```
 
-  If your setup doesn't allow auto discovery for any reason (e.g. js is in a container and the core0 is running on localhost), you can manually add the core0 node in the blueprint:
+  This blueprint will install the **auto discovery service** which will auto discover all G8OS nodes.
 
-  ```shell
+  Alternatively you can also manually add a G8OS node to the grid with following blueprint:
+
+  ```
   node.g8os__525400123456:
     redisAddr: 172.17.0.1
-
 
   actions:
    - action: install
   ```
 
-  Where 525400123456 is mac address of the core0 node with the ':' removed and the `redisAddr` is the IP address of the node.
+  In the above example `525400123456` is the MAC address of the G8OS node with the ':' removed and the `redisAddr` is the IP address of the node.
 
   After creating both blueprints, run the following commands to execute the blueprints and have the actions executed:
 
@@ -84,11 +102,13 @@ The setup consists of three elements:
 <a id="create-nodes"></a>
 ## Create the G8OS nodes
 
-* Start a G8OS Core0 node:
+* Start a G8OS Core0 node
 
-  For that you'll need to have the kernel compiled, see: https://github.com/g8os/initramfs
+  For that you'll need to have the kernel compiled, discussed in [Building your G8OS Boot Image](../../building/building.md).
 
-  Example how to start a VM running G8OS using qemu:
+  Next you will want to use the OS image, e.g. on a local VM using QEMU, as shown below.
+
+  Following command will start the VM with 5 disk attached to it:
 
   ```bash
   qemu-system-x86_64 -kernel g8os-kernel.efi \
@@ -104,8 +124,6 @@ The setup consists of three elements:
      -append 'ays=localhost:5000'
   ```
 
-  This command start the VM with 5 disk attached to it.
-
   Note the `-append` where we specify the address of the AYS server. This is used for auto discovery of the node when they boot.
 
   Once your G8OS is booted, you should have the `node.g8os` services created.
@@ -114,7 +132,9 @@ The setup consists of three elements:
 <a id="grid-api"></a>
 ## Setup the Grid API Server
 
-* Build the API:
+* Build the Grid API Server
+
+  If not already done before, first clone the Grid server repository, and then build the server:
 
   ```shell
   git clone https://github.com/g8os/grid
@@ -123,10 +143,13 @@ The setup consists of three elements:
   go build
   ```
 
-* Run the API:
+* Run the Grid API Server
 
-  `./api --bind :8080 --ays-url http://aysserver.com:5000 --ays-repo objstor`
+  Execute:
 
+  `./api --bind :8080 --ays-url http://localhost:5000 --ays-repo {repo-name}`
+
+  Options:
   - `--bind :8080` makes the server listen on all interfaces on port 8080
-  - `--ays-url` need to point to the AYS REST API
+  - `--ays-url` needed to point to the AYS REST API
   - `--ays-repo` is the name of the AYS repository the Grid API need to use. It should be the repo you created in step 1.
