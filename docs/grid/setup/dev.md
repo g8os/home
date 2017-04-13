@@ -53,7 +53,7 @@ The setup consists of three elements:
   Add the following blueprint in any file under the blueprints dir of your ays repo.
   This blueprint will install the auto discovery service which will auto discover all the core0 nodes.
 
-  ```
+  ```shell
   bootstrap.g8os__grid1:
 
   actions:
@@ -62,7 +62,7 @@ The setup consists of three elements:
 
   If your setup doesn't allow auto discovery for any reason (e.g. js is in a container and the core0 is running on localhost), you can manually add the core0 node in the blueprint:
 
-  ```
+  ```shell
   node.g8os__525400123456:
     redisAddr: 172.17.0.1
 
@@ -71,9 +71,9 @@ The setup consists of three elements:
    - action: install
   ```
 
-  Where 525400123456 is mac address of the core0 node with the ':' removed and the redisAddr is the ip of the node.
+  Where 525400123456 is mac address of the core0 node with the ':' removed and the `redisAddr` is the IP address of the node.
 
-  After creating either blueprints, run the following commands to execute the blueprints:
+  After creating both blueprints, run the following commands to execute the blueprints and have the actions executed:
 
   ```shell
   ays blueprint
