@@ -78,13 +78,13 @@ nic = {
 Values:
 - For value for `id` depends on the type of network:
 
-  | Network Type   | id                  |
-  |:---------------|:--------------------|
-  |default         | ignored             |
-  |bridge          | bridge name         |
-  |ZeroTier        | zerotier network id |
-  |VLAN            | VLAN tag            |
-  |VXLAN           | VXLAN id            |
+| Network Type   | id                  |
+|:---------------|:--------------------|
+|default         | ignored             |
+|bridge          | bridge name         |
+|ZeroTier        | zerotier network id |
+|VLAN            | VLAN tag            |
+|VXLAN           | VXLAN id            |
 
 - The `config` object can have all or any of the following fields:
 
