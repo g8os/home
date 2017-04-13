@@ -11,6 +11,7 @@
 * [Booting G8OS](booting/booting.md)
   * [Booting from USB](booting/usb.md)
   * [Booting from PXE Boot Server](booting/pxe.md)
+  * [Booting G8OS on a VM using QEMU](booting/qemu.md)
   * [Booting G8OS on VirtualBox](booting/virtualbox.md)
   * [Booting G8OS on Packet.net](booting/ays.md)
 * [Interacting with G8OS](interacting/interacting.md)
