@@ -76,7 +76,16 @@ nic = {
 ```
 
 Values:
-- The `id` is ignored in case of type `default`, and equal to the `vlan` tag in case of VLAN type, `vxlan id` in case of vxlan type, and `zerotier` network id in case of the ZeroTier type., or the bridge name in case of `bridge` type
+- For value for `id` depends on the type of network:
+
+  | Network Type   | id                  |
+  |:---------------|:--------------------|
+  |default         | ignored             |
+  |bridge          | bridge name         |
+  |ZeroTier        | zerotier network id |
+  |VLAN            | VLAN tag            |
+  |VXLAN           | VXLAN id            |
+
 - The `config` object can have all or any of the following fields:
 
   ```python
@@ -88,11 +97,9 @@ Values:
   }
   ```
 
-> Note that the config object is only honored in `bridge`, `vlan` and `vxlan` types only.
+> Note that the config object is only honored for `bridge`, `vlan` and `vxlan` types.
 
 <a id="kvm"></a>
 ## KVM
 
-Exactly the same as containers except for the following
-- No support for ZeroTier networking mode, yet a VM admin can himself start the ZeroTier binaries to join a network
-- No config object support
+Exactly the same as containers except for that there is no config object support.
