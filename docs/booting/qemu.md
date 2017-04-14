@@ -12,8 +12,5 @@ qemu-system-x86_64 -kernel g8os-kernel.efi \
    -drive file=vdd.qcow2,if=virtio \
    -drive file=vde.qcow2,if=virtio \
    -nodefaults -nographic \
-   -serial null -serial mon:stdio \
-   -append 'ays=localhost:5000'
+   -serial null -serial mon:stdio'
 ```
-
-Note the `-append` where we specify the address of an AYS server. This is used for auto discovery of the node when they boot.

@@ -34,7 +34,7 @@
   * [Logging](monitoring/logging.md)
   * [Statistics](monitoring/stats.md)
 * [G8ufs](g8ufs/g8ufs.md)
-  * [G8OS flists](g8ufs/flists/flists.md)
+  * [G8OS Flists](g8ufs/flists/flists.md)
     * [Creating Flists](g8ufs/flists/creating.md)
     * [Merging Flists](g8ufs/flists/merging.md)
   * [G8OS Hub](g8ufs/hub/hub.md)
