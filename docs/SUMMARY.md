@@ -13,6 +13,7 @@
   * [Booting from PXE Boot Server](booting/pxe.md)
   * [Booting G8OS on VirtualBox](booting/virtualbox.md)
   * [Booting G8OS on Packet.net](booting/ays.md)
+* [Bootstrap Service](bootstrap/bootstrap.md)
 * [Interacting with G8OS](interacting/interacting.md)
   * [Available Commands](interacting/commands/commands.md)  
     - [Core](interacting/commands/core.md)  
