@@ -46,7 +46,7 @@ Of course, you can specify a more precise branch (for debugging purposes for ins
 <a id="usb"></a>
 ### USB
 
-You can also download an USB image, ready to copy to an USB Stick: `https://bootstrap.gig.tech/usb/BRANCH/ZEROTIER-NETWORK`
+You can also download an USB image, ready to copy to an USB stick: `https://bootstrap.gig.tech/usb/BRANCH/ZEROTIER-NETWORK`
 
 <a id="ipxe"></a>
 ### iPXE Script
