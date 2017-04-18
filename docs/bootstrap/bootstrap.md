@@ -1,76 +1,86 @@
-# Bootstrap
+# G8OS Bootstrap Service
 
-We prodive some tools to starts quickly and easily our « always-up-to-date » build.
+The G8OS Bootstrap Service is available on [bootstrap.gig.tech](https://bootstrap.gig.tech).
 
-# Bootstrap repository
+The bootstrap service provides you with the following tools to quickly and easily get you started with **always-up-to-date** builds:
 
-Checkout our bootstrap's home page: [bootstrap.gig.tech](https://bootstrap.gig.tech)
+- [Kernel builds](#kernel-builds)
+- [Boot files](#boot-files)
+- [Autobuild Server](#auto-build)
 
-## Frontpage
-On the frontpage, you will see a list of available kernels.
+<a id="kernel-builds"></a>
+## Kernel builds
 
-Kernels pointed by `latest-release` are symlink to the most recent kernel branches.
+On the G8OS Bootstrap Service home page you get all available kernels are listed.
 
-All the kernels follow the `g8os-BRANCH-COMMIT.efi` notation, symlink point to the most recent `BRANCH` kernel available.
+You'll find them in two sections:
+- Under **/latest-release/** all most recent builds per branch are listed
+- Under **/kernel/** all most builds are listed
 
-## Services
+In both cases the naming notation `g8os-BRANCH-COMMIT.efi` is used.
 
-The bootstrap service can prodive you different autobuilt files to boot a kernel very easily
+E.g. in case of `g8os-1.1.0-alpha-sandbox-cleanup-core0-a2564152.efi`:
+- the branch name is `1.1.0-alpha-sandbox-cleanup-core0`
+- the commit, or build number is `a2564152`
 
+<a id="boot-files"></a>
+## Boot files
+
+Next to the most recent kernel builds, the G8OS bootstrap service also provides you with all other files to get the kernel booted:
+
+- [ISO file](#iso)
+- [USB image](#usb)
+- [iPXE script](#ipxe)
+
+<a id="iso"></a>
 ### ISO
 
 You can request an ISO file (~2MB) which contains a bootable iPXE service which will download the requested kernel.
 
 To generate an ISO, just follow this url: `https://bootstrap.gig.tech/iso/BRANCH/ZEROTIER-NETWORK`
 
-For exemple, to use `1.1.0-alpha` latest image, with earth's zerotier network: `https://bootstrap.gig.tech/iso/1.1.0-alpha/8056c2e21c000001`
+For example, to use the most recent build of the `1.1.0-alpha` branch, with earth's ZeroTier network: `https://bootstrap.gig.tech/iso/1.1.0-alpha/8056c2e21c000001`
 
-Of course, you can specify a more precise branch (like for debug purpose), according to available files on the bootstrap, exemple: `https://bootstrap.gig.tech/iso/1.1.0-alpha-changeloglevel-initramfs-035dd483/8056c2e21c000001`
+Of course, you can specify a more precise branch (for debugging purposes for instance), e.g.: `https://bootstrap.gig.tech/iso/1.1.0-alpha-changeloglevel-initramfs-035dd483/8056c2e21c000001`
 
+<a id="usb"></a>
 ### USB
 
-Like ISO file, you can download an USB Image that you can clone on an USB Stick: `https://bootstrap.gig.tech/usb/BRANCH/ZEROTIER-NETWORK`
+You can also download an USB image, ready to copy to an USB Stick: `https://bootstrap.gig.tech/usb/BRANCH/ZEROTIER-NETWORK`
 
+<a id="ipxe"></a>
 ### iPXE Script
 
-Like ISO and USB, you can request a iPXE script using: `https://bootstrap.gig.tech/ipxe/BRANCH/ZEROTIER-NETWORK`
+Like for ISO and USB, you can request a iPXE script using: `https://bootstrap.gig.tech/ipxe/BRANCH/ZEROTIER-NETWORK`
 
-This is the most low level you can grab, scripts embeded on ISO and USB images are the same as the script you can generate this way.
-This is useful when you want to boot a machine and can give a iPXE script (like `packet.net` or `OVH` server).
+This will provide with you with the script that gets generated for, and embedded in the ISO file and the USB image.
 
+This is useful when you want to boot a remote machine using an iPXE script, i.e. `Packet.net` or `OVH` servers.
 
-# Autobuild
+<a id="auto-build"></a>
+## Autobuild Server
 
-An autobuild server is in place to automatically rebuild kernel with last version of our github's repository.
+Automatic kernel builds are triggered when commits happen in the following GitHub repositories:
 
-You can see the build status here: [build.gig.tech/monitor/](https://build.gig.tech/monitor/)
+- [g8os/core0](https://github.com/g8os/core0)
+- [g8os/g8ufs](https://github.com/g8os/g8ufs)
+- [g8os/initramfs](https://github.com/g8os/initramfs)
 
-## How to use it
+The build process can be monitored here: [build.gig.tech/monitor/](https://build.gig.tech/monitor/).
 
-This works for the following repositories:
-- g8os/core0
-- g8os/g8ufs
-- g8os/initramfs
+The result is shown on the home page of the G8OS bootstrap service, discussed above.
 
-When you commit to this repositories, an auto-build action is triggered and a new kernel is produced (available on the bootstrap).
+Each time a commit is pushed to GitHub, a build request is called:
+- If you push to `g8os/initramfs`, a complete kernel image will be rebuilt, which can take up to **1 hour**
+- If you push to `g8os/core0` or `g8os/g8ufs`, a pre-compiled `initramfs` image (called `baseimage`) will be used, the actual build of `core0`or `g8ufs` only takes **about 3 minutes**
 
-## Convention
+In order to have a **3 minutes** compilation time for cores, the build process uses a pre-compiled `initramfs` image (called `baseimage`).
+If no base image is found, the build will be ignored.
 
-Each time a push is received on github, a build request is called. In order to have a correct build, you need some advice:
-- If you push to `g8os/initramfs`, a complete image will be rebuilt, which can take up to 1 hour.
-- If you push to `g8os/core0` or `g8os/g8ufs`, only this step will be recompiled, which takes **about 3 minutes**.
+### Base image and branches
 
-In order to have a **3 minutes** compilation time for cores, the build process use a pre-compiled `initramfs` image (called `baseimage`).
-If no baseimage are found, the build will be ignored.
+When you push to `initramfs`, a base image will be produced automatically at the end of the build. This base image will be tagged with the branch name. E.g. if you push to `1.1.0-alpha`, the base image will be called `1.1.0-alpha`.
 
-### Base Image and branches
+When you push to `core0` or `g8ufs`, a base image will be looked up that matches on the branch-prefix. E.g. when pushing a commit to the `1.1.0-alpha-issue-155` the build process will use the base image `1.1.0-alpha`. In theory a base image for each of the branches should exist.
 
-When you push to `initramfs`, a base image will be produced automatically at the end of the build.
-This base image will be tagged with the branch name.
-
-Eg: if you push to `1.1.0-alpha`, the base image will be called `1.1.0-alpha`
-
-When you push to `core0` or `g8ufs`, a base image will be lookup before compiling. This match is made by comparing branch-prefix.
-
-Eg: core0 branch `1.1.0-alpha-issue-155` will match base image `1.1.0-alpha`, you **NEED** to prefix your branch with an existing base image.
-In theory, all initramfs existing branch should have it's own base image.
+So you always **NEED** to prefix your branch with the name of an existing base image. If you would push a commit to `mybranch` instead of `1.1.0-alpha-mybranch` (forgetting/omitting the prefix), the build will not occur, and an error will be raised.
