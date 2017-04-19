@@ -1,4 +1,4 @@
-# Creating Disks
+# Managing Disks
 
 See the related commands documentation:
 - [Disk Commands](../interacting/commands/disk.md)

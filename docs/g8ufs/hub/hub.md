@@ -1,8 +1,12 @@
 # Hub
 
-The hub is active on `http://hub.gig.tech`, here you find all flists shared by the G8OS community.
+Containers boot from flist files, containing only metadata about the actual container image files, and loads the required files from the G8OS Hub when needed.
 
-See for instance the Ubuntu 16.04 flist of the user maxux: https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist
+The G8OS Hub is where all container images are stored. The official G8OS Hub is active on https://hub.gig.tech/, here you find all flists shared by the G8OS community.
+
+See for instance the Ubuntu 16.04 flist of Ubuntu 16.04: https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist
+
+Setting up your own (private) G8OS Hub is also supported, see https://github.com/g8os/hub.
 
 
 ## Setting up your own Hub instance

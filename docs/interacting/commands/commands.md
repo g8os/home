@@ -33,3 +33,6 @@ The `Core0` core understands a very specific set of commands:
 - [Btrfs commands](btrfs.md)
 - [ZeroTier commands](zerotier.md)
 - [KVM commands](kvm.md)
+- [Job Commands](job.md)
+- [Process Commands](process.md)
+- [Filesystem Commands](filesystem.md)

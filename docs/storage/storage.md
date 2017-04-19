@@ -1,3 +1,3 @@
 # Storage
 
-* [Creating Disks](creating.md)
+* [Managing Disks](managing.md)
