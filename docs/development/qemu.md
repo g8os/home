@@ -98,8 +98,7 @@ done
 """
 ```
 
-
-### Starting the Virtual Machine
+### Starting the virtual machine
 
 ```shell
 qemu-system-x86_64 -kernel staging/vmlinuz.efi \
@@ -113,7 +112,7 @@ qemu-system-x86_64 -kernel staging/vmlinuz.efi \
     -drive file=vde.qcow2,if=virtio
 ```
 
-This will launch a shell into the g8os, execute `ip a` to know the ipaddress.
+This will launch a shell into the g8os, execute `ip a` to know the IP address.
 
 <a id="ping-core0"></a>
 ## Ping the core0
