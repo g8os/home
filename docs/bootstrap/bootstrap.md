@@ -72,7 +72,7 @@ The result is shown on the home page of the G8OS bootstrap service, discussed ab
 
 Each time a commit is pushed to GitHub, a build request is called:
 - If you push to `g8os/initramfs`, a complete kernel image will be rebuilt, which can take up to **1 hour**
-- If you push to `g8os/core0` or `g8os/g8ufs`, a pre-compiled `initramfs` image (called `baseimage`) will be used, the actual build of `core0`or `g8ufs` only takes **about 3 minutes**
+- If you push to `g8os/core0` or `g8os/g8ufs`, a pre-compiled `initramfs` image (called `baseimage`) will be used, the actual build of `core0` or `g8ufs` only takes **about 3 minutes**
 
 In order to have a **3 minutes** compilation time for cores, the build process uses a pre-compiled `initramfs` image (called `baseimage`). If no base image is found, the build will be ignored.
 
