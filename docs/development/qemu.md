@@ -2,8 +2,9 @@
 
 Steps:
 
-- [Build a G8OS boot image](#build-image)
-- [Create a G8OS disks](#create-disks)
+- [Get a G8OS boot image](#build-image)
+- [Add support for nesting KVM](#nesting-kvm)
+- [Create the G8OS disks](#create-disks)
 - [Create a new virtual machine on QEMU](#create-vm)
 - [Create a port forward from the VM to your host to expose the Redis of the core0](#create-portforward)
 - [Start the virtual machine](#start-vm)
@@ -11,33 +12,32 @@ Steps:
 
 
 <a id="build-image"></a>
-## Get G8OS kernel
+## Get a G8OS boot image
 
-Either build it yourself see [Building your G8OS Boot Image](building/building.md).
+Either build it yourself see [Building your G8OS Boot Image](../building/building.md) or download it from the [G8OS Bootstrap Server](https://bootstrap.gig.tech/).
+
 We only require the kernel (`staging/vmlinuz.efi`) file when booting with QEMU.
-Or download it from the [bootstap server](https://bootstrap.gig.tech/)
 
+<a id="nesting-kvm"></a>
+## Add support for nesting KVM
 
-## Add support for nesting kvm (running a virtual machine inside a virtual machine)
+Nested virtualization enables existing virtual machines to be run on third-party hypervisors and on other clouds without any modifications to the original virtual machines or their networking.
 
-### Add runtime
-
+On the host, enable nested feature for `kvm_intel` as follows:
 ```shell
 sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nesting=1
 ```
 
-### Persistantly after reboot
-Alter `/etc/default/grub.conf`
-in ths line `GRUB_CMDLINE_LINUX_DEFAULT` add `kvm-intel.nesting=1` at the end and run
+To make it permanent, in `/etc/default/grub.conf` add `kvm-intel.nesting=1` at the end of the line `GRUB_CMDLINE_LINUX_DEFAULT` and run:
 ```
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 <a id="create-disks"></a>
-## Create G8OS disks
+## Create the G8OS disks
 
-To be able to provide storage for our ardbs and our container's cache we need to create atleast 5 disks.
+To be able to provide storage for our ARDBs and our container's cache we need to create at least 5 disks:
 
 ```shell
 qemu-img create -f qcow2 vda.qcow2 10G
@@ -47,20 +47,25 @@ qemu-img create -f qcow2 vdd.qcow2 10G
 qemu-img create -f qcow2 vde.qcow2 10G
 ```
 
-Note:
-Run this at any time if you want to wipe your disks (erase the content).
+> Note: Run this at any time if you want to wipe your disks (erase the content).
 
 <a id="create-vm"></a>
 ## Create a new virtual machine on QEMU
 
-First we need to have a bridge you can put your management interface in typicly you can usr `virbr0`.
-If you do not have `virbr0` you can get it by installing `libvirt-bin` and enabling the default net work `virsh net enable deault`.
+First we need to have a bridge where you can put your management interface in, typically you can use `virbr0`.
 
+If you do not have `virbr0` you can get it by installing `libvirt-bin` and enabling the default network:
+```
+virsh net enable default
+```
 
 ### Making overlay
-For development mode we can create a small overlay device which overwrites the files inside g8os. See [Hot Debug](https://github.com/g8os/initramfs/tree/1.1.0-alpha#hot-debug-inject-files-without-rebuilding-the-vmlinuz) for detailed instructions.
 
-In this overlay fs we can overwrite files comming from the initramfs for example `bin/core0` and `bin/coreX`
+For development mode we can create a small overlay device which overwrites the files inside G8OS.
+
+See [Hot Debug](https://github.com/g8os/initramfs/tree/1.1.0-alpha#hot-debug-inject-files-without-rebuilding-the-vmlinuz) for detailed instructions.
+
+In this overlay file system we can overwrite files coming from the `initramfs` for example `bin/core0` and `bin/coreX`:
 
 ```shell
 mkdir -p overlay
@@ -69,7 +74,8 @@ touch overlay/.g8os-debug
 
 ### Overwriting core0 and coreX
 
-In your core0 repo run `make` and copy the binaries to the overlay
+In your core0 repo run `make` and copy the binaries to the overlay:
+
 ```shell
 mkdir -p overlay/bin
 cp $GOPATH/src/github.com/g8os/core0/bin/* overlay/bin/
@@ -77,7 +83,7 @@ cp $GOPATH/src/github.com/g8os/core0/bin/* overlay/bin/
 
 ### Adding shell at boot
 
-If you want a shell to launch at startup of your g8os add the following file at `overlay/etc/g8os/conf/ashlogin.toml`
+If you want a shell to launch at startup of your G8OS add the following file at `overlay/etc/g8os/conf/ashlogin.toml`:
 
 ```toml
 [startup.ashlogin]
