@@ -53,6 +53,7 @@
     * [Development Setup](grid/setup/dev.md)
     * [Production Setup](grid/setup/prod.md)
   * [Grid API](grid/api.md)
+  * [Storage Cluster](grid/storagecluster.md)
 * [Appendix](appendix/appendix.md)
   * [G8OS Boot Process Flow](appendix/process.md)
   * [Installing Core0 on a Docker Container](appendix/docker.md)

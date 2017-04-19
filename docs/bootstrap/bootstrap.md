@@ -15,7 +15,7 @@ On the G8OS Bootstrap Service home page all available kernel builds (commits) ar
 
 You'll find them in two sections:
 - First, under **/latest-release/**, all most recent builds per branch are listed
-- And under **/kernel/** all most builds are listed
+- And under **/kernel/** all most recent builds are listed
 
 In both cases the naming notation `g8os-BRANCH-COMMIT.efi` is used.
 
