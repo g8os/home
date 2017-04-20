@@ -6,7 +6,6 @@ Steps:
 - [Add support for nesting KVM](#nesting-kvm)
 - [Create the G8OS disks](#create-disks)
 - [Create a new virtual machine on QEMU](#create-vm)
-- [Create a port forward from the VM to your host to expose the Redis of the core0](#create-portforward)
 - [Start the virtual machine](#start-vm)
 - [Ping the core0](#ping-core0)
 
