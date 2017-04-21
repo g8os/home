@@ -17,7 +17,7 @@ A NBD Server actually implements the NBD protocol. For each virtual machine that
 
 Each of these NBD Severs, or volume driver servers, runs in a container, and depend on another container that implements the TLOG Server.
 
-![Architecture](https://docs.google.com/drawings/d/1OT96iof99CBkXF2DX9dTQMtCHSWgDkU_y4vDcBB8AbI/pub?w=818&h=580)
+![Architecture](block-storage-architecture.png)
 
 <a id="tlog"></a>
 ## TLOG Servers
