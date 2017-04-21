@@ -15,12 +15,19 @@ NBD, abbreviation for Network Block Device, is the lightweight block access prot
 
 A NBD Server actually implements the NBD protocol. For each virtual machine that needs block storage one NBD Server is required.
 
-Each of these NBD Severs, or volume driver servers, run in a container, and depend on another container that implements the TLOG Server.
+Each of these NBD Severs, or volume driver servers, runs in a container, and depend on another container that implements the TLOG Server.
+
+![Architecture](https://docs.google.com/drawings/d/1OT96iof99CBkXF2DX9dTQMtCHSWgDkU_y4vDcBB8AbI/pub?w=818&h=580)
 
 <a id="tlog"></a>
 ## TLOG Servers
 
-The TLOG server, implemented in the TLOG container, also uses a storage cluster.
+- Compresses and encrypts
+- Cuts files of +1MB in file parts of <1MB (SCO's)
+- Stores data to G8OS ObjStor (HDD)
+- Stores metadata into GIG Directory Service
+- Puts the hashes to the blockchain
+
 
 <a id="nas"></a>
 ## NAS Servers
