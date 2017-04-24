@@ -33,8 +33,7 @@ def main():
     try:
         print("[+] Create container")
         nic = [{'type':'default'}, {'type': 'zerotier', 'id': ZEROTIER}]
-        job = cl.container.create(
-            'https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist', nics=nic, storage='ardb://hub.gig.tech:16379')
+        job = cl.container.create('https://hub.gig.tech/gig-official-apps/ubuntu1604.flist', nics=nic, storage='ardb://hub.gig.tech:16379')
 
         result = job.get(60)
         if result.state != 'SUCCESS':
