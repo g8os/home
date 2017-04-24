@@ -1,9 +1,20 @@
 # Booting G8OS on VirtualBox
 
-Steps:
+The easiest and recommended approach is to boot from an ISO image you get from the [G8OS Bootstrap Service](https://bootstrap.gig.tech/).
 
+You get an ISO boot image using https://bootstrap.gig.tech/iso/{BRANCH}/{ZEROTIER-NETWORK}, where:
+
+- **{BRANCH}** is the branch of the CoreOS, e.g. `1.1.0-alpha`
+- **{ZEROTIER-NETWORK}** is the ZeroTier network ID, create one on https://my.zerotier.com/network
+
+See the [ISO section in the G8OS Bootstrap Service documentation](../bootstrap/bootstrap/#iso) for more details on this.
+
+Alternatively you can build your own boot image and create your disk:
 - [Build a G8OS boot image](#build-image)
 - [Create a G8OS boot disk](#create-bootable)
+
+Once you got your boot image, continue following the next steps:
+
 - [Create a new virtual machine on VirtualBox](#create-vm)
 - [Create a port forward from the VM to your host to expose the Redis of the core0](#create-portforward)
 - [Start the virtual machine](#start-vm)
