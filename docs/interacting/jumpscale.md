@@ -11,6 +11,7 @@ The following script creates a container, installs OpenSSH, authorizes a SSH key
 ```python
 import sys
 import time
+import json
 from JumpScale import j
 
 SSHKEY = j.clients.ssh.SSHKeyGetFromAgentPub("id_rsa")
@@ -30,8 +31,14 @@ def main():
 
     try:
         print("[+] Create container")
-        container_id = cl.container.create(
+        job = cl.container.create(
             'https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist', zerotier=ZEROTIER, storage='ardb://hub.gig.tech:16379')
+
+        result = job.get(60)
+        if result.state != 'SUCCESS':
+            raise RuntimeError('failed to create container %s' % result.data)
+
+        container_id = json.loads(result.data)
         print("[+] container created, ID: %s" % container_id)
     except Exception as e:
         print("[-] Error during container creation: %s" % e)
