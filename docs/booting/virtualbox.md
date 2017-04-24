@@ -20,14 +20,27 @@ Once you got your boot image, continue following the next steps:
 <a id="create-vm"></a>
 ## Create a new virtual machine on VirtualBox  
 
-Select a Linux 64bit:  
+Specify a name for your new virtual machine, select **Linux** as type, and **Ubuntu (64-bit)** as version:  
 
 ![create vm](images/create_vm.png)  
 
-Before starting the virtual machine make sure you enabled the EFI support in the settings of the virtual machine:  
+Accept the default settings for memory size:
 
-![create vm](images/enable_efi.png)  
+![memory size](images/memory_size.png)  
 
+Also accept the default settings for creating a virtual disk:
+
+![create disk](images/create_disk.png)  
+
+![vdi disk](images/vdi_disk.png)  
+
+![dynamic disk](images/dynamically_allocated.png)
+
+![file location](images/file_location.png) 
+
+When starting the virtual machine you will asked to select the boot disk, select the ISO boot disk you got from the [G8OS Bootstrap Service](https://bootstrap.gig.tech/) or the one you created yourself:
+
+![create vm](images/select_iso.png)
 
 <a id="create-portforward"></a>
 ## Create a port forward from the VM to your host to expose the Redis of the core0
