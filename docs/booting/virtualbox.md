@@ -71,3 +71,11 @@ import g8core
 cl = g8core.Client('{host-ip-address}', port=6379, password='')
 cl.ping()
 ```
+
+This code requires JumpScale 8.2 or the g8core module and access to the ZeroTier network. A fast and easy way to meet this requirement is quickly setting a Docker container with JumpScale 8.2 preinstalled and connected to the ZeroNetwork, achieved using following command:
+
+```
+curl -sL https://tinyurl.com/js82installer | bash -s {your-ZeroTier-network-ID}
+```
+
+See the GitHub [\[JumpScale/developer\]](https://github.com/Jumpscale/developer/blob/master/docs/installjs8_details.md) repository for more details.
