@@ -25,14 +25,16 @@ def main():
 
     try:
         cl.ping()
+        cl.timeout = 100
     except Exception as e:
         print("Cannot connect to the Core0: %s" % e)
         return 1
 
     try:
         print("[+] Create container")
+        nic = [{'type':'default'}, {'type': 'zerotier', 'id': ZEROTIER}]
         job = cl.container.create(
-            'https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist', zerotier=ZEROTIER, storage='ardb://hub.gig.tech:16379')
+            'https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist', nics=nic, storage='ardb://hub.gig.tech:16379')
 
         result = job.get(60)
         if result.state != 'SUCCESS':
@@ -48,6 +50,8 @@ def main():
 
     print("[+] Authorize SSH key")
     container.system('bash -c "echo \'%s\' > /root/.ssh/authorized_keys"' % SSHKEY)
+
+    container.system('apt-get update').get()
 
     container.system("apt install ssh -y").get()
 
@@ -79,3 +83,4 @@ def get_zerotier_ip(container):
 if __name__ == '__main__':
     main()
 ```
+``
