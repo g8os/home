@@ -36,21 +36,30 @@ Also accept the default settings for creating a virtual disk:
 
 ![dynamic disk](images/dynamically_allocated.png)
 
-![file location](images/file_location.png) 
-
-When starting the virtual machine you will asked to select the boot disk, select the ISO boot disk you got from the [G8OS Bootstrap Service](https://bootstrap.gig.tech/) or the one you created yourself:
-
-![create vm](images/select_iso.png)
+![file location](images/file_location.png)
 
 <a id="create-portforward"></a>
-## Create a port forward from the VM to your host to expose the Redis of the core0
+## Create a port forward for the virtual machine in order to expose the Redis of the G8OS
 
-![port forward](images/portforward.png)
+In the **Settings** of the virtual machine expand the **Advanced** section on the **Network** tab:
+
+![network settings](images/network_settings.png)
+
+Click the **Port Forwarding** button:
+
+![port forwarding](images/port_forwarding.png)
+
+Forward port 6379:
+
+![6379](images/6379.png)
+
 
 <a id="start-vm"></a>
 ## Start the VM
 
-Use the boot disk created in the second step as boot disk.
+When starting the virtual machine you will asked to select the boot disk, select the ISO boot disk you got from the [G8OS Bootstrap Service](https://bootstrap.gig.tech/) or the one you created yourself:
+
+![select iso](images/select_iso.png)
 
 <a id="ping-core0"></a>
 ## Ping the core0
