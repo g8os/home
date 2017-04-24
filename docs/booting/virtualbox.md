@@ -7,14 +7,14 @@ The easiest and recommended approach is to boot from an ISO image you get from t
 
 See the [ISO section in the G8OS Bootstrap Service documentation](../bootstrap/bootstrap.md#iso) for more details on this.
 
-Alternatively you can build your own boot image and create your own boot disk as documented in [Building your G8OS Boot Image](building/building.md).
+Alternatively you can build your own boot image and create your own boot disk as documented in [Building your G8OS Boot Image](../building/building.md).
 
 Once you got your boot image, continue following the next steps:
 
 - [Create a new virtual machine on VirtualBox](#create-vm)
-- [Create a port forward from the VM to your host to expose the Redis of the core0](#create-portforward)
+- [Create a port forward for the virtual machine in order to expose the Redis of the G8OS](#create-portforward)
 - [Start the virtual machine](#start-vm)
-- [Ping the core0](#ping-core0)
+- [Ping the G8OS](#ping-core0)
 
 
 <a id="create-vm"></a>
@@ -57,12 +57,12 @@ Forward port 6379:
 <a id="start-vm"></a>
 ## Start the VM
 
-When starting the virtual machine you will asked to select the boot disk, select the ISO boot disk you got from the [G8OS Bootstrap Service](https://bootstrap.gig.tech/) or the one you created yourself:
+When starting the virtual machine you will be asked to select the boot disk. Select the ISO boot disk you got from the [G8OS Bootstrap Service](https://bootstrap.gig.tech/) or the one you created yourself:
 
 ![select iso](images/select_iso.png)
 
 <a id="ping-core0"></a>
-## Ping the core0
+## Ping the G8OS
 
 Using the Python client:
 
