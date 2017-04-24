@@ -11,6 +11,7 @@ The following script creates a container, installs OpenSSH, authorizes a SSH key
 ```python
 import sys
 import time
+import json
 from JumpScale import j
 
 SSHKEY = j.clients.ssh.SSHKeyGetFromAgentPub("id_rsa")
@@ -24,14 +25,21 @@ def main():
 
     try:
         cl.ping()
+        cl.timeout = 100
     except Exception as e:
         print("Cannot connect to the Core0: %s" % e)
         return 1
 
     try:
         print("[+] Create container")
-        container_id = cl.container.create(
-            'https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist', zerotier=ZEROTIER, storage='ardb://hub.gig.tech:16379')
+        nic = [{'type':'default'}, {'type': 'zerotier', 'id': ZEROTIER}]
+        job = cl.container.create('https://hub.gig.tech/maxux/ubuntu1604.flist', nics=nic, storage='ardb://hub.gig.tech:16379')
+        result = job.get(60)
+
+        if result.state != 'SUCCESS':
+            raise RuntimeError('failed to create container %s' % result.data)
+        container_id = json.loads(result.data)
+
         print("[+] container created, ID: %s" % container_id)
     except Exception as e:
         print("[-] Error during container creation: %s" % e)
@@ -42,7 +50,9 @@ def main():
     print("[+] Authorize SSH key")
     container.system('bash -c "echo \'%s\' > /root/.ssh/authorized_keys"' % SSHKEY)
 
-    container.system("apt install ssh -y").get()
+    container.system('apt-get update').get()
+
+    container.system("apt install -y ssh").get()
 
     print("[+] Start ssh daemon")
     container.system('/etc/init.d/ssh start').get()
