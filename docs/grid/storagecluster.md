@@ -14,10 +14,10 @@ So the arguments to pass are:
 - **label**: name the storage cluster
 - **servers**: number of ARDB server to instantiate
 - **driverType**: type of disk to use
-- **slaveNodes**: if set to true, half of the available disks will be used as master, the other as slave
+- **slaveNodes**: if set to true, an extra slave ARDB server will be create for master ARDB server
 - **nodes**: list of the nodes where the disks should be found
 
-In the example shown above you will end up with a cluster of 256 ARDB servers using all SSDs in node1 and node2. So If each node has 6 SSDs that are not yet used, then you'll get 12 disk, used by 256 ARDBs. What will actually happen is that for each free SSD a new storage pool will be created. So each storage pool then includes on SSD disk that gets formatted with a BTRFS file system.
+In the example shown above you will end up with a cluster of 256 master ARDB servers and another 256 slave ARDB servers using all SSDs in node1 and node2. So if each node has 6 SSDs that are not yet used, then you'll get 12 disk, used by 512 ARDBs. What actually will happen is that for each free SSD a new storage pool will be created. So each storage pool then includes on SSD disk.
 
 The storage cluster is used by:
 - [NBD Servers](#nbd)
@@ -30,9 +30,7 @@ The storage cluster is used by:
 
 NBD, abbreviation for Network Block Device, is the lightweight block access protocol used in a G8OS grid to implement block storage.
 
-A NBD Server actually implements the NBD protocol. For each virtual machine that needs block storage one NBD Server is required.
-
-Each of these NBD Severs, or volume driver servers, runs in a container, and depend on another container that implements the TLOG Server.
+A NBD Server actually implements the NBD protocol. For each virtual disk one NBD Server will be created. Each of these NBD Severs, or volume driver servers, runs in a separate container, and depends on another container that implements the TLOG Server.
 
 ![Architecture](block-storage-architecture.png)
 
