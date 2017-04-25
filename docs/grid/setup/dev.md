@@ -72,12 +72,20 @@ Setting up a Grid takes three steps:
 
   ```
   bootstrap.g8os__grid1:
+    zerotierNetID: {ZeroTier-Network-ID}
+    zerotierToken: '{ZeroTier-API-Token}'
 
   actions:
     - action: install
   ```
 
-  This blueprint will install the **auto discovery service** which will auto discover all G8OS nodes.
+  Values:
+  - **{ZeroTier-Network-ID}**: a ZeroTier Network ID
+  - **{ZeroTier-API-Token}**: a ZeroTier API Access Token
+
+  You get both values from the ZeroTier web portal: https://my.zerotier.com/
+
+  This blueprint will install the **auto discovery service** which will auto discover all G8OS nodes that were setup to connect to the same ZeroTier network.
 
   Alternatively you can also manually add a G8OS node to the grid with following blueprint:
 
