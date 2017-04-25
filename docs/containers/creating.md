@@ -9,7 +9,7 @@ In the below example a very basic container is created that only mounts the root
 
 We use the [ubuntu1604.flist](https://hub.gig.tech/gig-official-apps/ubuntu1604.flist.md) flist from the [gig-official-apps repository on the G8OS Hub](https://hub.gig.tech/gig-official-apps):
 
-[](flist.png)
+![](flist.png)
 
 Here's the Python script using the G8OS client:
 
