@@ -1,8 +1,23 @@
 # G8OS Storage Cluster
 
-The G8OS storage cluster consists of multiple connected key-value stores (default is ARDB) spread over the G8OS nodes.
+A G8OS grid typically includes one or more storage clusters.
 
-Creating a storage cluster can be achieved through the Grid API.
+Setting up a storage cluster is achieved through the Grid API exposed by the Grid Server. So you first need to setup a G8OS Grid, as documented in [G8OS Grid Setup](setup/setup.md). Once the Grid is setup, following storage cluster API endpoint is exposed by the Grid Server:
+
+![](storageclusterapi.png)
+
+Clicking **Post** will show you the details:
+
+![](post.png)
+
+So the arguments to pass are:
+- **label**: name the storage cluster
+- **servers**: number of ARDB server to instantiate
+- **driverType**: type of disk to use
+- **slaveNodes**: if set to true, half of the available disks will be used as master, the other as slave
+- **nodes**: list of the nodes where the disks should be found
+
+In the example shown above you will end up with a cluster of 256 ARDB servers using all SSDs in node1 and node2. So If each node has 6 SSDs that are not yet used, then you'll get 12 disk, used by 256 ARDBs. What will actually happen is that for each free SSD a new storage pool will be created. So each storage pool then includes on SSD disk that gets formatted with a BTRFS file system.
 
 The storage cluster is used by:
 - [NBD Servers](#nbd)
@@ -28,7 +43,7 @@ Each of these NBD Severs, or volume driver servers, runs in a container, and dep
 - Cuts files of +1MB in file parts of <1MB (SCO's)
 - Stores data to G8OS ObjStor (HDD)
 - Stores metadata into GIG Directory Service
-- Puts the hashes to the blockchain
+- Puts the hashes to the block chain
 
 
 <a id="nas"></a>
