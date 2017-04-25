@@ -77,8 +77,8 @@ Values:
 - **hostname**: Specific hostname you want to give to the container
   - If none it will automatically be set to core-x, x being the ID of the container
 
-- **storage**: URL to the ARDB storage cluster, e.g. `ardb://hub.gig.tech:16379`
-  - If not provided the default one from the Core0 configuration will be used
+- **storage**: URL to the ARDB storage cluster to mount, e.g. `ardb://hub.gig.tech:16379`
+  - If not provided the default one from the G8OS main configuration will be used, see the documentation about `fuse_storage` in [Main Configuration](../../config/main.md) for more details
 
 
 <a id="list"></a>

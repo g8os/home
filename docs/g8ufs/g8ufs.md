@@ -2,7 +2,7 @@
 
 G8ufs is the G8OS file system used in containers, which is actually a FUSE file system.
 
-Mounting the G8ufs is done by using a flist, which is a relatively small RocksDB database file, containing the metadata of the actual files and directories. On accessing a file G8OS fetches the required file chunks from a remote store, and caches it locally. This remote store is the G8OS Hub.
+Mounting the G8ufs is done by using a flist, which is a relatively small RocksDB database file, containing the metadata of the actual files and directories. On accessing a file G8OS fetches the required file chunks from a key-value store, and caches it locally. The key-value store that is used is configured with the `fuse_storage` global G8OS parameter, documented in [Main Configuration](../config/main.md#globals). The default is set to the ARDB storage cluster implemented in [G8OS Hub](hub/hub.md).
 
 The idea of using this approach is to speed up container creation by just mounting the container root from the image metadata contained in the flist file and once the container starts, it fetches only the required files from the remote store. So no need to clone large images locally.
 

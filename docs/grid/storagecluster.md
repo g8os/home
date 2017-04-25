@@ -2,6 +2,8 @@
 
 The G8OS storage cluster consists of multiple connected key-value stores (default is ARDB) spread over the G8OS nodes.
 
+Creating a storage cluster can be achieved through the Grid API.
+
 The storage cluster is used by:
 - [NBD Servers](#nbd)
 - [TLOG Servers](tlog)
