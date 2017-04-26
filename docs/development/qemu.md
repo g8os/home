@@ -99,19 +99,39 @@ done
 
 ### Starting the virtual machine
 
+If you are not using the ashlogin it is best to connect your serial to the console which prints kernel output and core0 logs.
+To accomplish this use the following command
+
 ```shell
-qemu-system-x86_64 -kernel staging/vmlinuz.efi \
-    -m 2048 -enable-kvm -cpu host \
-    -net nic,model=e1000 -net bridge,br=virbr0 \
-    -nodefaults -nographic \
-    -serial mon:stdio \
-    -drive file=fat:overlay,format=raw \
-    -drive file=vda.qcow2,if=virtio -drive file=vdb.qcow2,if=virtio \
-    -drive file=vdc.qcow2,if=virtio -drive file=vdd.qcow2,if=virtio \
-    -drive file=vde.qcow2,if=virtio
+qemu-system-x86_64 -kernel staging/vmlinuz.efi `# specify kernel to boot` \
+    -m 2048 -enable-kvm -cpu host `# create vm with 2GB ram and emulate cpu as the host` \
+    -netdev bridge,id=net0,br=virbr0 -device virtio-net-pci,netdev=net0 `# create network connected to virbr0` \
+    -nodefaults -nographic `# do not add floppy drivers and dont create graphic window` \
+    -serial null -serial mon:stdio `# first serial is for stdout and monitoring switch with ctrl+a c` \
+    -append "console=ttyS1,115200n8 zerotier=myzerotierid" `# specify kernel params send console to ttyS1 and specify zerotier network id` \
+    -drive file=fat:overlay,format=raw `# add overlay device` \
+    -drive file=vda.qcow2,if=virtio -drive file=vdb.qcow2,if=virtio `# add two disks` \
+    -drive file=vdc.qcow2,if=virtio -drive file=vdd.qcow2,if=virtio `# add another two disks` \
+    -drive file=vde.qcow2,if=virtio # and another one
 ```
 
+If you are using the ashlogin you should connect your serial to ttyS0
+To accomplish this use the following command
 This will launch a shell into the g8os, execute `ip a` to know the IP address.
+
+```shell
+qemu-system-x86_64 -kernel staging/vmlinuz.efi `# specify kernel to boot` \
+    -m 2048 -enable-kvm -cpu host `# create vm with 2GB ram and emulate cpu as the host` \
+    -netdev bridge,id=net0,br=virbr0 -device virtio-net-pci,netdev=net0 `# create network connected to virbr0` \
+    -nodefaults -nographic `# do not add floppy drivers and dont create graphic window` \
+    -serial mon:stdio `# first serial is for stdout and monitoring switch with ctrl+a c` \
+    -append "zerotier=myzerotierid" `# specify kernel params specify zerotier network id` \
+    -drive file=fat:overlay,format=raw `# add overlay device` \
+    -drive file=vda.qcow2,if=virtio -drive file=vdb.qcow2,if=virtio `# add two disks` \
+    -drive file=vdc.qcow2,if=virtio -drive file=vdd.qcow2,if=virtio `# add another two disks` \
+    -drive file=vde.qcow2,if=virtio # and another one
+```
+
 
 <a id="ping-core0"></a>
 ## Ping the core0
