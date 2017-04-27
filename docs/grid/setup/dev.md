@@ -34,6 +34,12 @@ Setting up a Grid takes three steps:
   pip3 install g8core
   ```
 
+* Install zerotier Python client
+
+```shell
+pip3 install zerotier
+```
+
 * Get the AYS actor templates for setting up a Grid
 
   The AYS actor templates for setting up all the Grid server components are available in the `templates` directory of the grid server repository on GitHub.
