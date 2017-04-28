@@ -14,4 +14,4 @@ This leaves the nbdserver running listening on standard unix socket at `unix:/tm
 
 Next we want to convert our image:
 
-```qemu-img -O nbd -n -p <image.qcow2> nbd+unix:///mytemplatename?socket=/tmp/nbd-socket```
+```qemu-img convert -O nbd -n -p <image.qcow2> nbd+unix:///mytemplatename?socket=/tmp/nbd-socket```
