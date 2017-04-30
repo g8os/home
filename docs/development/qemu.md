@@ -109,7 +109,7 @@ qemu-system-x86_64 -kernel staging/vmlinuz.efi `# specify kernel to boot` \
     -nodefaults -nographic `# do not add floppy drivers and dont create graphic window` \
     -serial null -serial mon:stdio `# first serial is for stdout and monitoring switch with ctrl+a c` \
     -append "console=ttyS1,115200n8 zerotier=myzerotierid" `# specify kernel params send console to ttyS1 and specify zerotier network id` \
-    -drive file=fat:overlay,format=raw `# add overlay device` \
+    -drive file=fat:rw:overlay,format=raw `# add overlay device` \
     -drive file=vda.qcow2,if=virtio -drive file=vdb.qcow2,if=virtio `# add two disks` \
     -drive file=vdc.qcow2,if=virtio -drive file=vdd.qcow2,if=virtio `# add another two disks` \
     -drive file=vde.qcow2,if=virtio # and another one
