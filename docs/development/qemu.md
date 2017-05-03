@@ -77,7 +77,7 @@ In your core0 repo run `make` and copy the binaries to the overlay:
 
 ```shell
 mkdir -p overlay/bin
-cp $GOPATH/src/github.com/g8os/core0/bin/* overlay/bin/
+cp $GOPATH/src/github.com/g8os/core0/sbin/* overlay/sbin/
 ```
 
 ### Adding shell at boot
