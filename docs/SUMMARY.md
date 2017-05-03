@@ -48,6 +48,7 @@
   * [Creating Containers](containers/creating.md)
 * [Virtual Machines](vms/vms.md)
   * [Creating Virtual Machines](vms/creating.md)
+  * [Creating Virtual Machines Templates](vms/templatecreation.md)
 * [G8OS Grid](grid/grid.md)
   * [Setting up the Grid](grid/setup/setup.md)
     * [Development Setup](grid/setup/dev.md)
