@@ -1,5 +1,7 @@
 # Booting G8OS on a VM using QEMU
 
+> The below documentation is currently not supported, and meant for development purposes only.
+
 Steps:
 
 - [Get a G8OS boot image](#build-image)
