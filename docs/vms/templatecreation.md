@@ -1,17 +1,21 @@
 # Master template creation
 
-To host a master template we first need to setup an (ardb-server)[https://github.com/yinqiwen/ardb].
-After we have our ardb-server running we need to have (nbdserver)[https://github.com/g8os/blockstor/blob/master/nbdserver/readme.md].
+To host a master template we first need to setup an [ARDB server](https://github.com/yinqiwen/ardb).
 
-From here one we just have to copy our standard qcow2/img/vdi template file into ardb.
+After we have our ARDB server running we need to have the [NBD server](https://github.com/g8os/blockstor/blob/master/nbdserver/readme.md).
 
-Runnining `nbdserver`:
+From here one we just have to copy our standard qcow2/img/vdi template file into ARDB.
 
-```nbdserver -export mytemplatename -testardbs <ardbip>:16379,<ardbip>:16379```
+Running `nbdserver`:
 
-This leaves the nbdserver running listening on standard unix socket at `unix:/tmp/nbd-socket` using our ardb-server for both metadata and data storage.
+```
+nbdserver -export mytemplatename -testardbs <ardbip>:16379,<ardbip>:16379
+```
 
+This leaves the NBD server running listening on standard unix socket at `unix:/tmp/nbd-socket` using our ARDB server for both metadata and data storage.
 
 Next we want to convert our image:
 
-```qemu-img convert -O nbd -n -p <image.qcow2> nbd+unix:///mytemplatename?socket=/tmp/nbd-socket```
+```
+qemu-img convert -O nbd -n -p <image.qcow2> nbd+unix:///mytemplatename?socket=/tmp/nbd-socket
+```
