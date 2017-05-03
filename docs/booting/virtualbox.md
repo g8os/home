@@ -73,9 +73,20 @@ cl.ping()
 ```
 
 This code requires JumpScale 8.2 or the g8core module and access to the ZeroTier network. A fast and easy way to meet this requirement is quickly setting a Docker container with JumpScale 8.2 preinstalled and connected to the ZeroNetwork, achieved using following command:
-
 ```
-curl -sL https://tinyurl.com/js82installer | bash -s {your-ZeroTier-network-ID}
+curl -sL https://raw.githubusercontent.com/Jumpscale/developer/master/scripts/js_builder_js82_zerotier.sh | bash -s {your-ZeroTier-network-ID}
+```
+
+While the above installation script is running you can watch the interactive output in a separate console:
+```bash
+tail -f /tmp/lastcommandoutput.txt
+```
+
+Once installed login to the container:
+```bash
+ssh root@zerotier-IP-address
+#or
+docker exec -it js82 bash
 ```
 
 See the GitHub [\[JumpScale/developer\]](https://github.com/Jumpscale/developer/blob/master/docs/installjs8_details.md) repository for more details.
