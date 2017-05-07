@@ -1,10 +1,10 @@
-# Grid Development Setup
+# Resourcepool Development Setup
 
-Setting up a Grid takes three steps:
+Setting up a Resourcepool takes three steps:
 
 - [Setup the AYS Server](#setup-ays)
 - [Create the G8OS nodes](#create-nodes)
-- [Setup the Grid API Server](#grid-api)
+- [Setup the Resourcepool API Server](#resourcepool-api)
 
 
 <a id="setup-ays"></a>
@@ -40,16 +40,16 @@ Setting up a Grid takes three steps:
 pip3 install zerotier
 ```
 
-* Get the AYS actor templates for setting up a Grid
+* Get the AYS actor templates for setting up a Resourcepool
 
-  The AYS actor templates for setting up all the Grid server components are available in the `templates` directory of the grid server repository on GitHub.
+  The AYS actor templates for setting up all the Resourcepool server components are available in the `templates` directory of the resourcepool server repository on GitHub.
 
   In order to clone this repository execute:
 
   ```shell
   cd /opt/code/
-  git clone https://github.com/g8os/grid/
-  cd grid
+  git clone https://github.com/g8os/resourcepool/
+  cd resourcepool
   git checkout 1.1.0-alpha
   ```
 
@@ -62,7 +62,7 @@ pip3 install zerotier
 
 * Create a new AYS repository
 
-  This is the AYS repository that you will use for the blueprints to setup the grid.
+  This is the AYS repository that you will use for the blueprints to setup the resourcepool.
 
   ```shell
   ays repo create --name {repo-name} --git {git-server}
@@ -77,7 +77,7 @@ pip3 install zerotier
   Add the following blueprint in the `blueprints` directory of your AYS repository:
 
   ```
-  bootstrap.g8os__grid1:
+  bootstrap.g8os__resourcepool1:
     zerotierNetID: {ZeroTier-Network-ID}
     zerotierToken: '{ZeroTier-API-Token}'
 
@@ -93,7 +93,7 @@ pip3 install zerotier
 
   This blueprint will install the **auto discovery service** which will auto discover all G8OS nodes that were setup to connect to the same ZeroTier network.
 
-  Alternatively you can also manually add a G8OS node to the grid with following blueprint:
+  Alternatively you can also manually add a G8OS node to the resourcepool with following blueprint:
 
   ```
   node.g8os__525400123456:
@@ -143,21 +143,21 @@ pip3 install zerotier
   Once your G8OS is booted, you should have the `node.g8os` services created.
 
 
-<a id="grid-api"></a>
-## Setup the Grid API Server
+<a id="resourcepool-api"></a>
+## Setup the Resourcepool API Server
 
-* Build the Grid API Server
+* Build the Resourcepool API Server
 
-  If not already done before, first clone the Grid server repository, and then build the server:
+  If not already done before, first clone the Resourcepool server repository, and then build the server:
 
   ```shell
-  git clone https://github.com/g8os/grid
-  cd grid/api
+  git clone https://github.com/g8os/resourcepool
+  cd resourcepool/api
   git checkout 1.1.0-alpha
   go build
   ```
 
-* Run the Grid API Server
+* Run the Resourcepool API Server
 
   Execute:
 
@@ -166,4 +166,4 @@ pip3 install zerotier
   Options:
   - `--bind :8080` makes the server listen on all interfaces on port 8080
   - `--ays-url` needed to point to the AYS REST API
-  - `--ays-repo` is the name of the AYS repository the Grid API need to use. It should be the repo you created in step 1.
+  - `--ays-repo` is the name of the AYS repository the Resourcepool API need to use. It should be the repo you created in step 1.
