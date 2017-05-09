@@ -1,14 +1,14 @@
-# Resourcepool Development Setup
+# Resource Pool Development Setup
 
-Setting up a Resourcepool takes three steps:
+Setting up a resource pool takes three steps:
 
-- [Setup the AYS Server](#setup-ays)
+- [Setup the AYS server](#setup-ays)
 - [Create the G8OS nodes](#create-nodes)
-- [Setup the Resourcepool API Server](#resourcepool-api)
+- [Setup the resource pool API server](#resourcepool-api)
 
 
 <a id="setup-ays"></a>
-## Setup the AYS Server
+## Setup the AYS server
 
 * Install JumpScale
 
@@ -34,15 +34,15 @@ Setting up a Resourcepool takes three steps:
   pip3 install g8core
   ```
 
-* Install zerotier Python client
+* Install ZeroTier Python client
 
 ```shell
 pip3 install zerotier
 ```
 
-* Get the AYS actor templates for setting up a Resourcepool
+* Get the AYS actor templates for setting up a resource pool
 
-  The AYS actor templates for setting up all the Resourcepool server components are available in the `templates` directory of the resourcepool server repository on GitHub.
+  The AYS actor templates for setting up all the resource pool server components are available in the `templates` directory of the resource pool server repository on GitHub.
 
   In order to clone this repository execute:
 
@@ -62,7 +62,7 @@ pip3 install zerotier
 
 * Create a new AYS repository
 
-  This is the AYS repository that you will use for the blueprints to setup the resourcepool.
+  This is the AYS repository that you will use for the blueprints to setup the resource pool.
 
   ```shell
   ays repo create --name {repo-name} --git {git-server}
@@ -93,7 +93,7 @@ pip3 install zerotier
 
   This blueprint will install the **auto discovery service** which will auto discover all G8OS nodes that were setup to connect to the same ZeroTier network.
 
-  Alternatively you can also manually add a G8OS node to the resourcepool with following blueprint:
+  Alternatively you can also manually add a G8OS node to the resource pool with following blueprint:
 
   ```
   node.g8os__525400123456:
@@ -144,11 +144,11 @@ pip3 install zerotier
 
 
 <a id="resourcepool-api"></a>
-## Setup the Resourcepool API Server
+## Setup the resource pool API server
 
-* Build the Resourcepool API Server
+* Build the resource pool API server
 
-  If not already done before, first clone the Resourcepool server repository, and then build the server:
+  If not already done before, first clone the resource pool server repository, and then build the server:
 
   ```shell
   git clone https://github.com/g8os/resourcepool
@@ -157,7 +157,7 @@ pip3 install zerotier
   go build
   ```
 
-* Run the Resourcepool API Server
+* Run the resource pool API server
 
   Execute:
 
@@ -166,4 +166,4 @@ pip3 install zerotier
   Options:
   - `--bind :8080` makes the server listen on all interfaces on port 8080
   - `--ays-url` needed to point to the AYS REST API
-  - `--ays-repo` is the name of the AYS repository the Resourcepool API need to use. It should be the repo you created in step 1.
+  - `--ays-repo` is the name of the AYS repository the resource pool API need to use. It should be the repo you created in step 1.
