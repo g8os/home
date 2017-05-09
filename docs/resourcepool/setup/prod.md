@@ -1,1 +1,0 @@
-# Resource Pool Production Setup
