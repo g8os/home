@@ -29,10 +29,11 @@ Setting up an Open vSwitch (OVS) network is achieved by starting an OVS containe
 In order to start an OVS through the Python client execute:
 
 ```python
-ovs = cl.container.create('https://hub.gig.tech/gig-official-apps/ovs.flist',
+resp = cl.container.create('https://hub.gig.tech/gig-official-apps/ovs.flist',
 	host_network=True,
 	storage='ardb://hub.gig.tech:16379',
 	tags=['ovs'])
+ovs = int(resp.get().data)
 ```
 
 Note the following:
