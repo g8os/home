@@ -1,3 +1,5 @@
+![G8OS console](g8os.png)
+
 # Documentation
 
 todo: Create documentation outline
