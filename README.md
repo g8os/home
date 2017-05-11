@@ -1,43 +1,43 @@
+![G8OS console](g8os.png)
+
 # Documentation
 
-- GitBook: https://gig.gitbooks.io/g8os
-- Documentation source in [./docs](./docs)
+todo: Create documentation outline
 
-# Repositories
+# Main repositories
 
+- [builders for G8OS initramfs](https://github.com/g8os/initramfs) (build instructions & scripts)
 - [g8os core](https://github.com/g8os/core0) (Init process and container manager of G8OS)
   - also contains python client for core0. It allows to manage containers, disks and networking of the G8OS
-- [g8os fs](https://github.com/g8os/fs) (our virtual filesystem which powers all our OS's)
-- [g8os stor](https://github.com/g8os/router) (our simple storage system for files served to fs)
-- [g8os cmd](https://github.com/g8os/corectl) command line tools
-- [hubble](https://github.com/g8os/hubble) (our socket forwarder)
-- [builders of G8OS initramfs](https://github.com/g8os/initramfs) (build instructions & scripts)
-- [AYS actor templates](https://github.com/g8os/ays_g8os)  (AYS actor templates repository which will contains services related to G8OS.)
+- [g8os fs](https://github.com/g8os/g8ufs) (Virtual filesystem for G8OS and G8OS containers)
+- [g8os blockstorage](https://github.com/g8os/blockstor) (Virtual NBD based disk distributed driver)
+- [g8os resourcepool](https://github.com/g8os/resourcepool) (G8OS resourcepool api server and ays templates)
+  - also contains raml definition and python stubs to interact with the RESTfull resourcepool api.
+- [g8os hub](https://github.com/g8os/hub) (Repository for flists and vdisk templates)
+  - publically hosted on https://hub.gig.tech
 
-# Releases
+# Release schedule
 
- - [v0.9.0](https://github.com/g8os/core0/releases/tag/v0.9.0) : First usable beta version of the G8OS.
-
-# Milestones
-
-- [0.10.0](https://github.com/g8os/home/milestone/4) :
-  - revert usage of IPFS as storage system for flist file.  
-    After our tests in 0.9.0 to use IPFS as storage, it turns out that it doesn't fit our need for big Flist. This version revert the usage of IPFS to our own Store.
-
-- [0.11.0](https://github.com/g8os/home/milestone/5) :
-  - monitoring / statistics
-  - self update
-  - container persistence ( maybe using AYS )
-  - investigate how to integrate ipfs lib inside core
-
-
-- [1.0](https://github.com/g8os/home/milestone/2) :
-  - First stable version and freezing of the APIs. Backward compatibility contracts start from this version.
-
-# Issues
-
-- [https://github.com/g8os/home/issues](https://github.com/g8os/home/issues)
-- see issues in each repository listed above
+- Dec 7, 2016: [v0.9.0](https://github.com/g8os/core0/releases/tag/v0.9.0)
+  - First usable beta version of the G8OS.
+- May 12, 2017: [v1.1.0-alpha-2](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-2.md) :
+  - Introduces
+    - hub
+    - resourcepool
+    - nbd blockstorage server.
+  - [kanban](https://waffle.io/g8os/home?milestone=v1.1.0-alpha-2)
+- May 26, 2017: [v1.1.0-alpha-3](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-3.md)
+  - Introduces
+    - G8OS Gateway
+    - redundant vdisks
+    - upgrade of service to JumpScale 9
+  - [kanban](https://waffle.io/g8os/home?milestone=v1.1.0-alpha-3)
+- June 9, 2017: [v1.1.0-alpha-4](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-4.md)
+  - Introduces:
+    - Basic integration with OpenvCloud
+    - vdisk rollback
+    - automatic handling of storage failures and all components authenticated over itsyou.online
+  - [kanban](https://waffle.io/g8os/home?milestone=v1.1.0-alpha-4)
 
 # Telegram
 

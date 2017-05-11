@@ -1,8 +1,3 @@
 # Getting Started
 
-To get acquainted with G8OS you will want to go through the following process:
-
-- [Building your G8OS Boot Image](../building/building.md)
-- [Configuration of your G8OS Boot Image](../config/config.md)
-- [Booting G8OS](../booting/booting.md)
-- [Interacting with G8OS](../interacting/interacting.md)
+See the [Getting started section of the G8OS Resource Pool repository](https://github.com/g8os/resourcepool/tree/master/docs/gettingstarted/gettingstarted.md)
