@@ -18,22 +18,26 @@ todo: Create documentation outline
 
 # Release schedule
 
- - Dec 7, 2016: [v0.9.0](https://github.com/g8os/core0/releases/tag/v0.9.0)
-   - First usable beta version of the G8OS.
- - May 12, 2017: [v1.1.0-alpha-2](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-2.md) :
-   - Introduces
-     - hub
-     - resourcepool
-     - nbd blockstorage server.
- - May 26, 2017: [v1.1.0-alpha-3](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-3.md)
-   - Introduces
-     - G8OS Gateway
-     - redundant vdisks
-     - upgrade of service to JumpScale 9
- - June 9, 2017: [v1.1.0-alpha-4](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-4.md)
-   - Basic integration with OpenvCloud
-   - vdisk rollback
-   - automatic handling of storage failures and all components authenticated over itsyou.online
+- Dec 7, 2016: [v0.9.0](https://github.com/g8os/core0/releases/tag/v0.9.0)
+  - First usable beta version of the G8OS.
+- May 12, 2017: [v1.1.0-alpha-2](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-2.md) :
+  - Introduces
+    - hub
+    - resourcepool
+    - nbd blockstorage server.
+  - [kanban](https://waffle.io/g8os/home?milestone=v1.1.0-alpha-2)
+- May 26, 2017: [v1.1.0-alpha-3](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-3.md)
+  - Introduces
+    - G8OS Gateway
+    - redundant vdisks
+    - upgrade of service to JumpScale 9
+  - [kanban](https://waffle.io/g8os/home?milestone=v1.1.0-alpha-3)
+- June 9, 2017: [v1.1.0-alpha-4](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-4.md)
+  - Introduces:
+    - Basic integration with OpenvCloud
+    - vdisk rollback
+    - automatic handling of storage failures and all components authenticated over itsyou.online
+  - [kanban](https://waffle.io/g8os/home?milestone=v1.1.0-alpha-4)
 
 # Telegram
 
