@@ -94,7 +94,7 @@ CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' .
 <a id="upload-image"></a>
 ## Upload the image
 
-General documentation can be found here: https://github.com/g8os/home/blob/1.1.0-alpha/docs/vms/templatecreation.md
+General documentation on using an NBD Server can be found in the G8OS Block Storage documentation: [Using your NBD Server](https://github.com/g8os/blockstor/blob/master/docs/nbd/using.md)
 
 Start with running the NBD server connected to the central ARDB server:
 ```shell
