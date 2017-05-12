@@ -4,7 +4,7 @@
 
 The [`/docs`](/docs) directory of this (home) repository is quite empty since all documentation is in the **/docs** directories of the main G8OS repositories, listed here below.
 
-In [Getting Started](gettingstarted/gettingstarted.md) you find the recommended path to quickly get up and running with G8OS.
+In [Getting Started with G8OS](/docs/gettingstarted/gettingstarted.md) you find the recommended path to quickly get up and running.
 
 # Main repositories
 
