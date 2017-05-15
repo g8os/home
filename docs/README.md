@@ -5,7 +5,7 @@ G8OS is a stateless and lightweight Linux operating system designed for clustere
 - G8OS is stateless by not needing any locally stored data, not even G8OS system files
 - G8OS is lightweight by only containing the components required to securely run and manage containers and virtual machines
 
-See [Getting Started](gettingstarted/gettingstarted.md) for the recommended path to quickly get up and running with G8OS.
+See [ Getting Started with G8OS](gettingstarted/gettingstarted.md) for the recommended path to quickly get up and running with G8OS.
 
 Key components:
 

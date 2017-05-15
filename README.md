@@ -2,12 +2,7 @@
 
 G8OS is a stateless and lightweight Linux operating system designed for clustered deployments to host virtual machines and containerized applications.
 
-See the [G8OS Introduction](/docs/README.md) in the [`/docs`](/docs) documentation directory for a more detailed description and links to the documentation as all components.
-
-
-he [`/docs`](/docs) directory of this (home) repository is quite empty since all documentation is in the **/docs** directories of the main G8OS repositories, listed here below.
-
-In [Getting Started with G8OS](/docs/gettingstarted/gettingstarted.md) you find the recommended path to quickly get up and running.
+See the [G8OS Introduction](/docs/README.md) in the [`/docs`](/docs) documentation directory for a more details and the documentation links of all G8OS components.
 
 # Main repositories
 
