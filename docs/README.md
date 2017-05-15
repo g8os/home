@@ -1,4 +1,4 @@
-# G8OS Introduction
+# Introduction to G8OS
 
 G8OS is a stateless and lightweight Linux operating system designed for clustered deployments to host virtual machines and containerized applications.
 
