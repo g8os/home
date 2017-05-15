@@ -1,13 +1,63 @@
 # G8OS
 
-G8OS is a stateless cloud OS.
+G8OS is a stateless and lightweight Linux operating system designed for clustered deployments to host virtual machines and containerized applications.
 
-G8OS is stateless by not needing locally stored data, not even G8OS system files.
-
-G8OS is an open-source operating system based on the Linux kernel and designed for building distributed, self-healing datacenters, optimized for running both containerized applications and virtual machines.
-
-G8OS is lightweight, efficient and secure by only containing the components required to run containers and virtual machines, keeping the potential attack surface to the bare minimal, and administration easy.
-
-G8OS boots containers from flists. Flists are relatively small metadata files that allow G8OS to fetch files from a storage cluster through a thin UnionFS-based FUSE layer. This happens on demand, only when the files are actually needed.
+- G8OS is stateless by not needing any locally stored data, not even G8OS system files
+- G8OS is lightweight by only containing the components required to securely run and manage containers and virtual machines
 
 See [Getting Started](gettingstarted/gettingstarted.md) for the recommended path to quickly up and running with G8OS.
+
+Key components:
+
+- [Core0](#core0)
+- [G8ufs](#g8ufs)
+- [Hub](#hub)
+- [Resource Pool](#resourcepool)
+- [Block Storage](#blockresource)
+
+<a id="core0"></a>
+## Core0
+
+Core0 is the G8OS replacement for systemd.
+
+Interacting with Core0 is done by sending commands through a Redis, allowing you to manage disks, set-up networks and create containers and start virtual machines.
+
+- GitHub repository: [g8os/hub](https://github.com/g8os/core0)
+- Documentation: [Core0 Documentation](https://github.com/g8os/core0/blob/master/docs/SUMMARY.md)
+- Getting started: [Getting Started with Core0](https://github.com/g8os/core0/blob/master/docs/gettingstarted/gettingstarted.md)
+
+<a id="g8ufs"></a>
+## G8ufs
+
+G8ufs is the G8OS file system used in containers, which is actually a FUSE file system. Mounting the G8ufs is done by using a flist, which is a relatively small RocksDB database file, containing the metadata of the actual files and directories. On accessing a file G8OS fetches the required file chunks from a remote store, and caches it locally. This remote store is the G8OS Hub, discussed here below.
+
+- GitHub repository: [g8os/hub](https://github.com/g8os/hub)
+- Documentation: [G8ufs Documentation](https://github.com/g8os/g8ufs/blob/master/docs/SUMMARY.md)
+- Getting started: [Getting Started with G8ufs](https://github.com/g8os/g8ufs/blob/master/docs/gettingstarted/gettingstarted.md)
+
+<a id="hub"></a>
+## Hub
+
+The G8OS Hub is where all container images are stored.
+
+- GitHub repository: [g8os/hub](https://github.com/g8os/hub)
+- Documentation: [Hub Documentation](https://github.com/g8os/hub/blob/master/docs/SUMMARY.md)
+- Getting started: [Getting Started with the G8OS Hub](https://github.com/g8os/hub/blob/master/docs/gettingstarted/gettingstarted.md)
+
+<a id="resourcepool"></a>
+## Resource Pool
+
+A resource pool is a cluster of G8OS nodes, sharing compute and storage capacity.
+
+- GitHub repository: [g8os/resourcepool](https://github.com/g8os/resourcepool)
+- Documentation: [Resource Pool Documentation](https://github.com/g8os/resourcepool/blob/master/docs/SUMMARY.md)
+- Getting Started: [Getting Started with G8OS Resource Pool](https://github.com/g8os/resourcepool/blob/master/docs/gettingstarted/gettingstarted.md)
+
+<a id="blockstorage"></a>
+## Block Storage
+
+G8OS Block Storage is about the components that allow to create and use block devices (vdisks) from within virtual machines hosted on a G8OS node.
+
+- GitHub repository: [g8os/resourcepool](https://github.com/g8os/blockstor)
+- Documentation: [Resource Pool Documentation](https://github.com/g8os/blockstor/blob/master/docs/SUMMARY.md)
+- Getting Started: [Getting Started with NBD Server](https://github.com/g8os/blockstor/blob/master/docs/gettingstarted/gettingstarted.md)
