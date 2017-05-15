@@ -1,14 +1,15 @@
-# G8OS
+# G8OS Introduction
 
 G8OS is a stateless and lightweight Linux operating system designed for clustered deployments to host virtual machines and containerized applications.
 
 - G8OS is stateless by not needing any locally stored data, not even G8OS system files
 - G8OS is lightweight by only containing the components required to securely run and manage containers and virtual machines
 
-See [Getting Started](gettingstarted/gettingstarted.md) for the recommended path to quickly up and running with G8OS.
+See [Getting Started](gettingstarted/gettingstarted.md) for the recommended path to quickly get up and running with G8OS.
 
 Key components:
 
+- [Initramfs Builder](#initramfs)
 - [Core0](#core0)
 - [G8ufs](#g8ufs)
 - [Hub](#hub)
@@ -16,9 +17,18 @@ Key components:
 - [Block Storage](#blockresource)
 
 <a id="core0"></a>
+## Initramfs Builder
+
+Initramfs Builder is an assembly of shell scripts for building the G8OS Linux kernel and create an initramfs to start Core0.
+
+- GitHub repository: [g8os/hub](https://github.com/g8os/initramfs)
+- Documentation: [Initramfs Documentation](https://github.com/g8os/initramfs/blob/master/docs/SUMMARY.md)
+- Getting started: [Getting Started with Initramfs](https://github.com/g8os/initramfs/blob/master/docs/gettingstarted/gettingstarted.md)
+
+<a id="core0"></a>
 ## Core0
 
-Core0 is the G8OS replacement for systemd.
+Core0 is the G8OS replacement for systemd, the init system to bootstrap the user space and manage all processes subsequently.
 
 Interacting with Core0 is done by sending commands through a Redis, allowing you to manage disks, set-up networks and create containers and start virtual machines.
 
@@ -38,7 +48,7 @@ G8ufs is the G8OS file system used in containers, which is actually a FUSE file 
 <a id="hub"></a>
 ## Hub
 
-The G8OS Hub is where all container images are stored.
+The G8OS Hub is where all container images and and vdisk boot images are stored.
 
 - GitHub repository: [g8os/hub](https://github.com/g8os/hub)
 - Documentation: [Hub Documentation](https://github.com/g8os/hub/blob/master/docs/SUMMARY.md)
@@ -59,5 +69,5 @@ A resource pool is a cluster of G8OS nodes, sharing compute and storage capacity
 G8OS Block Storage is about the components that allow to create and use block devices (vdisks) from within virtual machines hosted on a G8OS node.
 
 - GitHub repository: [g8os/resourcepool](https://github.com/g8os/blockstor)
-- Documentation: [Resource Pool Documentation](https://github.com/g8os/blockstor/blob/master/docs/SUMMARY.md)
+- Documentation: [Block Storage Documentation](https://github.com/g8os/blockstor/blob/master/docs/SUMMARY.md)
 - Getting Started: [Getting Started with NBD Server](https://github.com/g8os/blockstor/blob/master/docs/gettingstarted/gettingstarted.md)
