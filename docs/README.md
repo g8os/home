@@ -16,7 +16,7 @@ Key components:
 - [Resource Pool](#resourcepool)
 - [Block Storage](#blockresource)
 
-> All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2**: [Initramfs Builder](https://github.com/g8os/initramfs/releases/tag/v1.1.0-alpha-2), [Core0](https://github.com/g8os/core0/releases/tag/v1.1.0-alpha-2), [G8ufs](https://github.com/g8os/g8ufs/releases/tag/v1.1.0-alpha-2), [G8OS Resource Pool](https://github.com/g8os/resourcepool/releases/tag/v1.1.0-alpha-2)
+> All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [Initramfs Builder](https://github.com/g8os/initramfs/releases/tag/v1.1.0-alpha-2), [Core0](https://github.com/g8os/core0/releases/tag/v1.1.0-alpha-2), [G8ufs](https://github.com/g8os/g8ufs/releases/tag/v1.1.0-alpha-2) and [G8OS Resource Pool](https://github.com/g8os/resourcepool/releases/tag/v1.1.0-alpha-2)
 
 <a id="core0"></a>
 ## Initramfs Builder
