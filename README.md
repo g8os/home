@@ -37,15 +37,15 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
     - Resource Pool (with **v8.2.0rc1** of [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1))
     - NBD Block Storage server
   - [Kanban](https://waffle.io/g8os/home?milestone=1.1.0-alpha-2)
-- May 26, 2017: [v1.1.0-alpha-3](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-3.md)
+- June 2, 2017: [v1.1.0-alpha-3](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-3.md)
   - Introduces
     - G8OS Gateway
-    - Redundant vdisks
     - Upgrade of service to JumpScale 9
   - [Kanban](https://waffle.io/g8os/home?milestone=1.1.0-alpha-3)
-- June 9, 2017: [v1.1.0-alpha-4](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-4.md)
+- June 17, 2017: [v1.1.0-alpha-4](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-4.md)
   - Introduces:
     - Basic integration with OpenvCloud
+    - Redundant vdisks
     - vdisk rollback
     - Automatic handling of storage failures and all components authenticated over ItsYou.online
   - [Kanban](https://waffle.io/g8os/home?milestone=1.1.0-alpha-4)
