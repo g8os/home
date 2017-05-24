@@ -39,15 +39,16 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
   - [Kanban](https://waffle.io/g8os/home?milestone=1.1.0-alpha-2)
 - June 2, 2017: [v1.1.0-alpha-3](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-3.md)
   - Introduces
+    - Basic integration with OpenvCloud
     - G8OS Gateway
     - Upgrade of service to JumpScale 9
   - [Kanban](https://waffle.io/g8os/home?milestone=1.1.0-alpha-3)
 - June 17, 2017: [v1.1.0-alpha-4](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-4.md)
   - Introduces:
-    - Basic integration with OpenvCloud
     - Redundant vdisks
     - vdisk rollback
-    - Automatic handling of storage failures and all components authenticated over ItsYou.online
+    - Automatic handling of storage failures
+    - All components accessed only over tls and authenticated over ItsYou.online
   - [Kanban](https://waffle.io/g8os/home?milestone=1.1.0-alpha-4)
 
 # Telegram
