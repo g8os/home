@@ -1,4 +1,4 @@
-# G8OS (G8 Operating System)
+# ZeroOS (G8 Operating System)
 
 # core0
 core0 is a replacement for sysvinit/systemd, it provides process management and administration.

@@ -1,6 +1,6 @@
 # Create a Flist and Start a Container
 
-G8OS containers are booted using a flist. A flist is basically a recipe of files and folders with pointers to the actual content of the filesystem with which the container is started.
+ZeroOS containers are booted using a flist. A flist is basically a recipe of files and folders with pointers to the actual content of the filesystem with which the container is started.
 
 In this tutorial we will create a flist ourselves, upload it to our hub, and then use it to start a g8os container (aka CoreX) to which we'll connect over ZeroTier.
 
@@ -58,7 +58,7 @@ See https://github.com/Jumpscale/developer#add-a-g8os-grid-to-your-development-e
 
 Once you have your ZeroOS Rest API API Server, you need to add nodes. ![ZeroOS Rest API](https://gig.gitbooks.io/zero-os/0-rest-api/g8os-grid.png)
 
-The only thing you need to do is to boot your nodes into the ZeroTier network with which you created your js Docker container and installed your resource pool. See [Booting G8OS](https://gig.gitbooks.io/g8os/booting/booting.html) and [G8OS Bootstrap Service](https://gig.gitbooks.io/g8os/bootstrap/bootstrap.html) for more information on how to boot your nodes into your ZeroTier network.
+The only thing you need to do is to boot your nodes into the ZeroTier network with which you created your js Docker container and installed your resource pool. See [Booting ZeroOS](https://gig.gitbooks.io/g8os/booting/booting.html) and [ZeroOS Bootstrap Service](https://gig.gitbooks.io/g8os/bootstrap/bootstrap.html) for more information on how to boot your nodes into your ZeroTier network.
 
 Let's take a look at the API to learn how we can start a container on a g8os node:
 https://rawgit.com/zero-os/0-rest-api/1.1.0-alpha/raml/api.html#nodes__nodeid__containers_post

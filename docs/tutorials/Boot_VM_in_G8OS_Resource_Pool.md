@@ -3,7 +3,7 @@
 Setting up a resource pool takes three steps:
 
 - [Setup the AYS Server](#setup-ays)
-- [Deploy the G8OS nodes to packet.net](#deploy-nodes)
+- [Deploy the ZeroOS nodes to packet.net](#deploy-nodes)
 - [Create Storage Cluster](#storagecluster)
 - [Deploy VMs](#deployvms)
 
@@ -29,7 +29,7 @@ Setting up a resource pool takes three steps:
 
 
 
-* Add a G8OS resourcepool to your JumpScale 8.2 environment
+* Add a ZeroOS resourcepool to your JumpScale 8.2 environment
 
   This script is based on the JumpScale 8.2 environment above:
 
@@ -44,7 +44,7 @@ Setting up a resource pool takes three steps:
   ```
 
 <a id="deploy-nodes"></a>
-## Deploying G8OS nodes on packet.net
+## Deploying ZeroOS nodes on packet.net
 
 - Copy [nodes.yaml](./packet.net-resourcepool-10nodes-100vms/blueprints/nodes.yaml) to ays repo `/optvar/cockpit_repos/resourcepool-server` and edit it to match your configuration
 - Run ays service to start deploying

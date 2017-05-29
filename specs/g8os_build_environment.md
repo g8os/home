@@ -1,9 +1,9 @@
 
-### G8OS build environment setup & managed by AYS (REPO_BUILD_X)
+### ZeroOS build environment setup & managed by AYS (REPO_BUILD_X)
 
 #### bootstrap the build environment
 
-- create a telegram "G8OS build" group, invite whoever is interested to know about this
+- create a telegram "ZeroOS build" group, invite whoever is interested to know about this
     - create user inside which is our robot used in this build process
     - this will be used over all REPO_BUILD_X environments
 
@@ -125,28 +125,28 @@
 
 # PHASE 2
 
-### G8OS grid: AYS process (REPO_G8OS_GRID_X)
+### ZeroOS grid: AYS process (REPO_ZeroOS_GRID_X)
 
-- this REPO_G8OS_GRID_X is owned by the person who owns the resources (has access to the mgmt network)
+- this REPO_ZeroOS_GRID_X is owned by the person who owns the resources (has access to the mgmt network)
 - this repo is run from any jumpscale enabled PC who has also the zerotier network connected to
-- define G8OS mgmt network
+- define ZeroOS mgmt network
     - params
         - zerotier network id
         - passwd as used in redis
-- define all required G8OS Node instance which is child of G8OS mgmt network
+- define all required ZeroOS Node instance which is child of ZeroOS mgmt network
     - params:
         - zerotier ip addr
     - monitoring:
         - read from redis to see if can access it over zerotier network
         - check total load system on redis (PHASE2) of the node
-- on one of the G8OS Node's start
+- on one of the ZeroOS Node's start
     - AYS rest
 - define an AYS app or AYS solution
     - in the AYS template there will be the plist to be used
     - params
         - required mem, required CPU capacity, ...
-    - the install step will create a G8OS container with right plist
+    - the install step will create a ZeroOS container with right plist
         - call the redis on the appropriate core0 and ask for container with right resources
-    - the start tesp will ask G8OS container
+    - the start tesp will ask ZeroOS container
         - to start all required apps (apps are on the fuse FS)
     - the monitor step will do the monitoring of the app
