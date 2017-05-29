@@ -52,11 +52,11 @@ As a result the flist will be generated based on the tar you uploaded.
 TODO: Needs to be completed as soon as the infrastructure is in place
 
 ## Step 2: Bring up your container
-The next part of the tutorial targets the G8OS Resource Pool API to bring up a container using our brand new flist. In order to use the G8OS Resource Pool API you need to add a G8OS Resource Pool API Server to your js Docker container.
+The next part of the tutorial targets the ZeroOS Rest API API to bring up a container using our brand new flist. In order to use the ZeroOS Rest API API you need to add a ZeroOS Rest API API Server to your js Docker container.
 
-See https://github.com/Jumpscale/developer#add-a-g8os-grid-to-your-development-env to add a G8OS Resource Pool API Server to your local js container.
+See https://github.com/Jumpscale/developer#add-a-g8os-grid-to-your-development-env to add a ZeroOS Rest API API Server to your local js container.
 
-Once you have your G8OS Resource Pool API Server, you need to add nodes. ![G8OS Resource Pool](https://gig.gitbooks.io/zero-os/0-rest-api/g8os-grid.png)
+Once you have your ZeroOS Rest API API Server, you need to add nodes. ![ZeroOS Rest API](https://gig.gitbooks.io/zero-os/0-rest-api/g8os-grid.png)
 
 The only thing you need to do is to boot your nodes into the ZeroTier network with which you created your js Docker container and installed your resource pool. See [Booting G8OS](https://gig.gitbooks.io/g8os/booting/booting.html) and [G8OS Bootstrap Service](https://gig.gitbooks.io/g8os/bootstrap/bootstrap.html) for more information on how to boot your nodes into your ZeroTier network.
 

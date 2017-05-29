@@ -2,7 +2,7 @@
 
 This tutorials will guide you through the steps to create a vdisk boot image and make it available on a central ARDB-based storage cluster.
 
-As an example we create a vdisk boot image for Ubuntu.16.04.2. With this vdisk boot image you can then boot a virtual machine in a G8OS resource pool, as documented in the tutorial [Boot a Virtual Machine in G8OS Resource Pool](Boot_VM_in_G8OS_Resource_Pool.md).
+As an example we create a vdisk boot image for Ubuntu.16.04.2. With this vdisk boot image you can then boot a virtual machine in a G8OS resource pool, as documented in the tutorial [Boot a Virtual Machine in ZeroOS Rest API](Boot_VM_in_G8OS_Resource_Pool.md).
 
 Steps:
 - [Get your environment into shape](#setup-env)

@@ -1,4 +1,4 @@
-# Boot a Virtual Machine in G8OS Resource Pool
+# Boot a Virtual Machine in ZeroOS Rest API
 
 Setting up a resource pool takes three steps:
 

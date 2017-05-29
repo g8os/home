@@ -6,7 +6,7 @@ For more details see the [Introduction to G8OS](/docs/README.md) in the [`/docs`
 
 # Requirements
 
-All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [G8ufs](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2) and [G8OS Resource Pool](https://github.com/zero-os/0-rest-api/releases/tag/v1.1.0-alpha-2)
+All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [G8ufs](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2) and [ZeroOS Rest API](https://github.com/zero-os/0-rest-api/releases/tag/v1.1.0-alpha-2)
 
 
 # Main repositories
@@ -20,7 +20,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
   - Virtual file system for G8OS and G8OS containers
 - [G8OS Block Storage](https://github.com/zero-os/0-disk):
   - NBD based distributed block storage server
-- [G8OS Resource Pool](https://github.com/zero-os/0-rest-api):
+- [ZeroOS Rest API](https://github.com/zero-os/0-rest-api):
   - G8OS resource pool API server and AYS templates
   - Also contains RAML definition and Python stubs to interact with the RESTfull resource pool API
 - [G8OS Hub](https://github.com/g8os/hub):
@@ -31,10 +31,10 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
 
 - Dec 7, 2016: [v0.9.0](https://github.com/zero-os/0-core/releases/tag/v0.9.0)
   - First usable beta version of the G8OS
-- May 12, 2017: **v1.1.0-alpha-2**: [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [G8ufs](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2), [G8OS Resource Pool](https://github.com/zero-os/0-rest-api/releases/tag/v1.1.0-alpha-2)
+- May 12, 2017: **v1.1.0-alpha-2**: [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [G8ufs](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2), [ZeroOS Rest API](https://github.com/zero-os/0-rest-api/releases/tag/v1.1.0-alpha-2)
   - Introduces
     - Hub
-    - Resource Pool (with **v8.2.0rc1** of [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1))
+    - Rest API (with **v8.2.0rc1** of [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1))
     - NBD Block Storage server
   - [Kanban](https://waffle.io/g8os/home?milestone=1.1.0-alpha-2)
 - June 2, 2017: [v1.1.0-alpha-3](https://github.com/g8os/home/blob/master/milestones/1.1.0-alpha-3.md)

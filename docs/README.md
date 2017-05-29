@@ -13,10 +13,10 @@ Key components:
 - [0-Core](#0-core)
 - [](#0-fs)
 - [Hub](#hub)
-- [Resource Pool](#resourcepool)
+- [Rest API](#resourcepool)
 - [Block Storage](#blockresource)
 
-> All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2) and [G8OS Resource Pool](https://github.com/zero-OS/0-disk/releases/tag/v1.1.0-alpha-2)
+> All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2) and [ZeroOS Rest API](https://github.com/zero-OS/0-disk/releases/tag/v1.1.0-alpha-2)
 
 <a id="0-core"></a>
 ## 0-Initramfs Builder
@@ -57,13 +57,13 @@ The G8OS Hub is where all container images and and vdisk boot images are stored.
 - Getting started: [Getting Started with the G8OS Hub](https://github.com/g8os/hub/blob/master/docs/gettingstarted/gettingstarted.md)
 
 <a id="resourcepool"></a>
-## Resource Pool
+## Rest API
 
 A resource pool is a cluster of G8OS nodes, sharing compute and storage capacity.
 
 - GitHub repository: [zero-os/0-rest-api](https://github.com/zero-OS/0-disk)
-- Documentation: [Resource Pool Documentation](https://github.com/zero-OS/0-disk/blob/master/docs/SUMMARY.md)
-- Getting Started: [Getting Started with G8OS Resource Pool](https://github.com/zero-OS/0-disk/blob/master/docs/gettingstarted/gettingstarted.md)
+- Documentation: [Rest API Documentation](https://github.com/zero-OS/0-disk/blob/master/docs/SUMMARY.md)
+- Getting Started: [Getting Started with ZeroOS Rest API](https://github.com/zero-OS/0-disk/blob/master/docs/gettingstarted/gettingstarted.md)
 
 <a id="blockstorage"></a>
 ## Block Storage
