@@ -84,21 +84,21 @@ For the next step you need to SSH into your container:
 ssh root@IP-address
 ```
 
-Then follow the [instructions from the NDB server repository](https://github.com/g8os/blockstor#build-for-g8os) on how to build the NDB server:
+Then follow the [instructions from the NDB server repository](https://github.com/Zero-OS/0-Disk#build-for-g8os) on how to build the NDB server:
 ```
-go get -d github.com/g8os/blockstor/nbdserver
-cd $GOPATH/src/github.com/g8os/blockstor/nbdserver
+go get -d github.com/Zero-OS/0-Disk/nbdserver
+cd $GOPATH/src/github.com/Zero-OS/0-Disk/nbdserver
 CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' .
 ```
 
 <a id="upload-image"></a>
 ## Upload the image
 
-General documentation on using an NBD Server can be found in the G8OS Block Storage documentation: [Using your NBD Server](https://github.com/g8os/blockstor/blob/master/docs/nbd/using.md)
+General documentation on using an NBD Server can be found in the G8OS Block Storage documentation: [Using your NBD Server](https://github.com/Zero-OS/0-Disk/blob/master/docs/nbd/using.md)
 
 Start with running the NBD server connected to the central ARDB server:
 ```shell
-cd /opt/go/proj/src/github.com/g8os/blockstor/nbdserver
+cd /opt/go/proj/src/github.com/Zero-OS/0-Disk/nbdserver
 ./nbdserver -export osboxes.org:ubuntu.16.04.2 -testardbs 172.30.208.208:26379,172.30.208.208:26379
 ```
 

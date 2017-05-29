@@ -56,12 +56,12 @@ The next part of the tutorial targets the G8OS Resource Pool API to bring up a c
 
 See https://github.com/Jumpscale/developer#add-a-g8os-grid-to-your-development-env to add a G8OS Resource Pool API Server to your local js container.
 
-Once you have your G8OS Resource Pool API Server, you need to add nodes. ![G8OS Resource Pool](https://gig.gitbooks.io/g8os/resourcepool/g8os-grid.png)
+Once you have your G8OS Resource Pool API Server, you need to add nodes. ![G8OS Resource Pool](https://gig.gitbooks.io/zero-os/0-rest-api/g8os-grid.png)
 
 The only thing you need to do is to boot your nodes into the ZeroTier network with which you created your js Docker container and installed your resource pool. See [Booting G8OS](https://gig.gitbooks.io/g8os/booting/booting.html) and [G8OS Bootstrap Service](https://gig.gitbooks.io/g8os/bootstrap/bootstrap.html) for more information on how to boot your nodes into your ZeroTier network.
 
 Let's take a look at the API to learn how we can start a container on a g8os node:
-https://rawgit.com/g8os/resourcepool/1.1.0-alpha/raml/api.html#nodes__nodeid__containers_post
+https://rawgit.com/zero-os/0-rest-api/1.1.0-alpha/raml/api.html#nodes__nodeid__containers_post
 
 Before we can start the container, we need to decide on which node in our resource pool we are gonna deploy it. So let's list up the nodes in our resource pool:
 ```
@@ -78,7 +78,7 @@ root@js82:~# curl -sL http://192.168.193.212:8080/nodes | underscore print --col
 We select node **0cc47a3b3d6a** to run our container. So next step is to create the container using the following post request:
 ![post via postman](new-container.png)
 
-More information on the complete API can be found on https://rawgit.com/g8os/resourcepool/1.1.0-alpha/raml/api.html
+More information on the complete API can be found on https://rawgit.com/zero-os/0-rest-api/master/raml/api.html
 
 > Note:
 > It is best to use a separate ZeroTier network for this exercise. Makes it simpler to identify the container that is joining the network.

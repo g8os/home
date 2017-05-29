@@ -9,9 +9,9 @@
 
 # More documentation
 
-* [Initramfs Documentation](https://github.com/g8os/initramfs/blob/master/docs/SUMMARY.md)
-* [Core0 Documentation](https://github.com/g8os/core0/blob/master/docs/SUMMARY.md)
-* [G8ufs Documentation](https://github.com/g8os/g8ufs/blob/master/docs/SUMMARY.md)
+* [Initramfs Documentation](https://github.com/zero-os/0-initramfs/blob/master/docs/SUMMARY.md)
+* [Core0 Documentation](https://github.com/zero-os/0-core/blob/master/docs/SUMMARY.md)
+* [G8ufs Documentation](https://github.com/zero-os/0-fs/blob/master/docs/SUMMARY.md)
 * [Hub Documentation](https://github.com/g8os/hub/blob/master/docs/SUMMARY.md)
-* [Resource Pool Documentation](https://github.com/g8os/resourcepool/blob/master/docs/SUMMARY.md)
-* [Block Storage Documentation](https://github.com/g8os/blockstor/blob/master/docs/SUMMARY.md)
+* [Resource Pool Documentation](https://github.com/zero-os/0-rest-api/blob/master/docs/SUMMARY.md)
+* [Block Storage Documentation](https://github.com/zero-os/0-disk/blob/master/docs/SUMMARY.md)
