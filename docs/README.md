@@ -11,12 +11,12 @@ Key components:
 
 - [0-Initramfs Builder](#0-initramfs)
 - [0-Core](#0-core)
-- [0-FS](#0-fs)
+- [](#0-fs)
 - [Hub](#hub)
 - [Resource Pool](#resourcepool)
 - [Block Storage](#blockresource)
 
-> All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [0-FS](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2) and [G8OS Resource Pool](https://github.com/zero-OS/0-disk/releases/tag/v1.1.0-alpha-2)
+> All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2) and [G8OS Resource Pool](https://github.com/zero-OS/0-disk/releases/tag/v1.1.0-alpha-2)
 
 <a id="0-core"></a>
 ## 0-Initramfs Builder
@@ -39,13 +39,13 @@ Interacting with 0-Core is done by sending commands through a Redis, allowing yo
 - Getting started: [Getting Started with 0-Core](https://github.com/zero-os/0-core/blob/master/docs/gettingstarted/gettingstarted.md)
 
 <a id="0-fs"></a>
-## 0-FS
+##
 
-0-FS is the G8OS file system used in containers, which is actually a FUSE file system. Mounting the 0-FS is done by using a flist, which is a relatively small RocksDB database file, containing the metadata of the actual files and directories. On accessing a file G8OS fetches the required file chunks from a remote store, and caches it locally. This remote store is the G8OS Hub, discussed here below.
+ is the G8OS file system used in containers, which is actually a FUSE file system. Mounting the  is done by using a flist, which is a relatively small RocksDB database file, containing the metadata of the actual files and directories. On accessing a file G8OS fetches the required file chunks from a remote store, and caches it locally. This remote store is the G8OS Hub, discussed here below.
 
 - GitHub repository: [g8os/hub](https://github.com/g8os/hub)
-- Documentation: [0-FS Documentation](https://github.com/zero-os/0-fs/blob/master/docs/SUMMARY.md)
-- Getting started: [Getting Started with 0-FS](https://github.com/zero-os/0-fs/blob/master/docs/gettingstarted/gettingstarted.md)
+- Documentation: [ Documentation](https://github.com/zero-os/0-fs/blob/master/docs/SUMMARY.md)
+- Getting started: [Getting Started with ](https://github.com/zero-os/0-fs/blob/master/docs/gettingstarted/gettingstarted.md)
 
 <a id="hub"></a>
 ## Hub

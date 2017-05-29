@@ -1,6 +1,6 @@
 # Getting Started with G8OS
 
-* [Getting started with G8OS Core0](https://github.com/zero-os/0-Core/blob/master/docs/gettingstarted/gettingstarted.md)
+* [Getting started with G8OS 0-Core](https://github.com/zero-os/0-Core/blob/master/docs/gettingstarted/gettingstarted.md)
 * [Getting started with G8OS Resource Pool](https://github.com/zero-os/0-rest-api/blob/master/docs/gettingstarted/gettingstarted.md)
 * [Tutorials](/docs/tutorials/tutorials.md)
   * [Create a Flist and Start a Container](/docs/tutorials/Create_a_Flist_and_Start_a_Container.md)
