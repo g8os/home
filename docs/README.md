@@ -14,7 +14,7 @@ Key components:
 - [0-FS](#0-fs)
 - [Hub](#hub)
 - [Rest API](#resourcepool)
-- [Block Storage](#blockresource)
+- [0-Disk](#blockstorage)
 
 > All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2) and [ZeroOS Rest API](https://github.com/zero-OS/0-disk/releases/tag/v1.1.0-alpha-2)
 
@@ -66,10 +66,10 @@ A resource pool is a cluster of ZeroOS nodes, sharing compute and storage capaci
 - Getting Started: [Getting Started with ZeroOS Rest API](https://github.com/zero-OS/0-disk/blob/master/docs/gettingstarted/gettingstarted.md)
 
 <a id="blockstorage"></a>
-## Block Storage
+## 0-Disk
 
-ZeroOS Block Storage is about the components that allow to create and use block devices (vdisks) from within virtual machines hosted on a ZeroOS node.
+ZeroOS 0-Disk is about the components that allow to create and use block devices (vdisks) from within virtual machines hosted on a ZeroOS node.
 
-- GitHub repository: [zero-os/0-rest-api](https://github.com/zero-os/0-disk)
-- Documentation: [Block Storage Documentation](https://github.com/zero-os/0-disk/blob/master/docs/SUMMARY.md)
+- GitHub repository: [zero-os/0-disk](https://github.com/zero-os/0-disk)
+- Documentation: [0-Disk Documentation](https://github.com/zero-os/0-disk/blob/master/docs/SUMMARY.md)
 - Getting Started: [Getting Started with NBD Server](https://github.com/zero-os/0-disk/blob/master/docs/gettingstarted/gettingstarted.md)
