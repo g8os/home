@@ -1,4 +1,4 @@
-# Boot a Virtual Machine using the Zero-OS Rest API
+# Boot a Virtual Machine using the Zero-OS REST API
 
 Setting up a resource pool takes three steps:
 

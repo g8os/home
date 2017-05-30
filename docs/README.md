@@ -16,7 +16,7 @@ Key components:
 - [0-rest-api](#0-rest-api)
 - [0-Disk](#0-disk)
 
-> All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2) and [Zero-OS Rest API](https://github.com/zero-OS/0-disk/releases/tag/v1.1.0-alpha-2)
+> All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2) and [Zero-OS REST API](https://github.com/zero-OS/0-disk/releases/tag/v1.1.0-alpha-2)
 
 <a id="0-core"></a>
 ## 0-Initramfs
@@ -57,13 +57,13 @@ The Zero-OS Hub is where all container images and and vdisk boot images are stor
 - Getting started: [Getting Started with the Zero-OS Hub](https://github.com/g8os/hub/blob/master/docs/gettingstarted/gettingstarted.md)
 
 <a id="0-rest-api"></a>
-## Rest API
+## REST API
 
 A resource pool is a cluster of Zero-OS nodes, sharing compute and storage capacity.
 
 - GitHub repository: [zero-os/0-rest-api](https://github.com/zero-OS/0-disk)
-- Documentation: [Rest API Documentation](https://github.com/zero-OS/0-disk/blob/master/docs/SUMMARY.md)
-- Getting Started: [Getting Started with Zero-OS Rest API](https://github.com/zero-OS/0-disk/blob/master/docs/gettingstarted/gettingstarted.md)
+- Documentation: [REST API Documentation](https://github.com/zero-OS/0-disk/blob/master/docs/SUMMARY.md)
+- Getting Started: [Getting Started with Zero-OS REST API](https://github.com/zero-OS/0-disk/blob/master/docs/gettingstarted/gettingstarted.md)
 
 <a id="0-disk"></a>
 ## 0-Disk
