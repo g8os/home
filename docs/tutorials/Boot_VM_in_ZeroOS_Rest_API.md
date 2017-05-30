@@ -1,4 +1,4 @@
-# Boot a Virtual Machine in Zero-OS Rest API
+# Boot a Virtual Machine using the Zero-OS Rest API
 
 Setting up a resource pool takes three steps:
 
@@ -29,7 +29,7 @@ Setting up a resource pool takes three steps:
 
 
 
-* Add a Zero-OS resourcepool to your JumpScale 8.2 environment
+* Add a Zero-OS API server to your JumpScale 8.2 environment
 
   This script is based on the JumpScale 8.2 environment above:
 
@@ -63,7 +63,7 @@ Execute [createcluster.py](./scripts/createcluster.py):
 
   Options:
   - `--servers` number of servers in the storagecluster'
-  - `--resourcepoolserver` resourcepool api server endpoint
+  - `--resourcepoolserver`  API server endpoint
 
 From your js docker:
 ```shell
@@ -82,7 +82,7 @@ Execute [deployvms.py](./scripts/deployvms.py) (It may take long time):
   `python3 deployvms.py [OPTIONS]`
 
 Options:
-  - `--resourcepoolserver`     Resourcepool api server endpoint. Eg: http://{ipaddress}:{port}
+  - `--resourcepoolserver`     API server endpoint, e.g.: http://{ipaddress}:{port}
   - `--storagecluster`         Storagecluster name, e.g: `bigmomma`
   - `--vms`                    Number of vms to create
   - `--bootdisktemplate`       Virtual machine template name, e.g: `ardb://hub.gig.tech:16379/template:ubuntu-1604`
