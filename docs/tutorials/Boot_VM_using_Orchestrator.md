@@ -1,10 +1,13 @@
-# Boot a Virtual Machine using the Zero-OS REST API
+# Boot a Virtual Machine using the Zero-OS Orchestrator
 
-Setting up a resource pool takes three steps:
+First you will need to setup a Zero-OS cluster, which takes three steps:
 
 - [Setup the AYS Server](#setup-ays)
 - [Deploy the Zero-OS nodes to packet.net](#deploy-nodes)
 - [Create Storage Cluster](#storagecluster)
+
+Once done, you can actually deploy the virtual machine using the Zero-Tier Orchestrator:
+
 - [Deploy VMs](#deployvms)
 
 

@@ -11,17 +11,17 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
 
 # Main repositories
 
-- [0-Initramfs](https://github.com/zero-os/0-initramfs):
+- [0-initramfs](https://github.com/zero-os/0-initramfs):
   - Assembly of shell scripts for building the Zero-OS Linux kernel and create an initramfs to start 0-Core.
-- [0-Core](https://github.com/zero-os/0-core):
+- [0-core](https://github.com/zero-os/0-core):
   - Init process (0-Core) and container manager (CoreX) of Zero-OS
   - Also contains Python client for 0-Core, for managing containers, disks and networking of a Zero-OS node
-- [0-FS](https://github.com/zero-os/0-fs):
+- [0-fs](https://github.com/zero-os/0-fs):
   - Virtual file system for Zero-OS and Zero-OS containers
 - [0-Disk](https://github.com/zero-os/0-disk):
   - Zero-OS Block Storage: NBD based distributed block storage server
-- [0-rest-api](https://github.com/zero-os/0-rest-api):
-  - Zero-OS Restfull API server and AYS templates
+- [0-orchestrator](https://github.com/zero-os/0-orchestrator):
+  - Restfull API server and AYS templates for managing a Zero-OS cluster
   - Also contains RAML definition and Python stubs to interact with the RESTfull API
 - [0-Hub](https://github.com/g8os/hub):
   - Repository for flists and vdisk templates
