@@ -17,13 +17,13 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
   - Init process (0-Core) and container manager (CoreX) of Zero-OS
   - Also contains Python client for 0-Core, for managing containers, disks and networking of a Zero-OS node
 - [0-fs](https://github.com/zero-os/0-fs):
-  - Virtual file system for Zero-OS and Zero-OS containers
+  - File system for Zero-OS and Zero-OS containers
 - [0-Disk](https://github.com/zero-os/0-disk):
   - Zero-OS Block Storage: NBD based distributed block storage server
 - [0-orchestrator](https://github.com/zero-os/0-orchestrator):
   - Restfull API server and AYS templates for managing a Zero-OS cluster
   - Also contains RAML definition and Python stubs to interact with the RESTfull API
-- [0-Hub](https://github.com/g8os/hub):
+- [0-Hub](https://github.com/zero-os/0-hub):
   - Repository for flists and vdisk templates
   - Publicly hosted on https://hub.gig.tech
 
