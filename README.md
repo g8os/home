@@ -21,8 +21,8 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
 - [0-Disk](https://github.com/zero-os/0-disk):
   - Zero-OS Block Storage: NBD based distributed block storage server
 - [0-orchestrator](https://github.com/zero-os/0-orchestrator):
-  - Restfull API server and AYS templates for managing a Zero-OS cluster
-  - Also contains RAML definition and Python stubs to interact with the RESTfull API
+  - Restful API server and AYS templates for managing a Zero-OS cluster
+  - Also contains RAML definition and Python stubs to interact with the RESTful API
 - [0-Hub](https://github.com/zero-os/0-hub):
   - Repository for flists and vdisk templates
   - Publicly hosted on https://hub.gig.tech
