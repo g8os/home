@@ -61,7 +61,7 @@ class Docifier():
 
     def notice(self, filename, line, issue):
         if filename not in self._notice:
-            print("[-]   %s:" % filename)
+            print("[-]   %s" % filename)
             self._notice[filename] = 0
 
         # new issue found on this file
@@ -83,7 +83,10 @@ class Docifier():
 
         for line in contents:
             if "https://github.com/%s" % repository in line:
-                issues = self.notice(filename, current, "absolute self-reference")
+                if "git clone https://" in line or "git+https" in line:
+                    issues = self.notice(filename, current, "absolute self-reference (possible fake-positive)")
+                else:
+                    issues = self.notice(filename, current, "absolute self-reference")
 
             if "rawgit.com/" in line:
                 issues = self.notice(filename, current, "rawgit.com reference")
