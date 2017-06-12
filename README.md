@@ -37,7 +37,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
     - Rest API (with **v8.2.0rc1** of [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1))
     - NBD Block Storage server
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-2)
-- June 6, 2017: [v1.1.0-alpha-3](milestones/1.1.0-alpha-3.md)
+- June 6, 2017: **[v1.1.0-alpha-3](release_notes/1.1.0-alpha-3.md)** : [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-3), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-3), [0-FS](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-3), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/releases/tag/v1.1.0-alpha-3)
   - Introduces
     - Basic integration with OpenvCloud
     - Zero-OS Gateway
