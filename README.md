@@ -47,13 +47,13 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
   - Introduces:
     - Redundant vdisks
     - vdisk rollback
-    - Automatic handling of storage failures
     - All components accessed only over tls and authenticated over ItsYou.online
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-4)
 - June 30, 2017: [v1.1.0-alpha-5](milestones/1.1.0-alpha-5.md)
   - Introduces:
     - Complete integration with OpenvCloud
     - Statistics
+    - Automatic handling of storage failures
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-5)
 
 # Telegram
