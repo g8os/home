@@ -43,7 +43,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
     - Zero-OS Gateway
     - Upgrade of service to JumpScale 9
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-3)
-- June 16, 2017: [v1.1.0-alpha-4](milestones/1.1.0-alpha-4.md)
+- June 16, 2017: **[v1.1.0-alpha-4](release_notes/1.1.0-alpha-4.md)** [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/tree/1.1.0-alpha-4), [0-Core](https://github.com/zero-os/0-core/tree/1.1.0-alpha-4), [0-FS](https://github.com/zero-os/0-fs/tree/1.1.0-alpha-4), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/tree/1.1.0-alpha-4)
   - Introduces:
     - Redundant vdisks
     - vdisk rollback
