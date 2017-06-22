@@ -51,10 +51,23 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-4)
 - June 30, 2017: [v1.1.0-alpha-5](milestones/1.1.0-alpha-5.md)
   - Introduces:
-    - Complete integration with OpenvCloud
-    - Statistics
-    - Automatic handling of storage failures
+    - OpenvCloud on top of Jumpscale9
+    - Statistics gathering and grafana dashbaords
+    - Persistent zerotier ips for zero-os and containers
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-5)
+- July 14, 2017: [v1.1.0-alpha-6](milestones/1.1.0-alpha-6.md)
+  - Introduces:
+    - OpenvCloud
+     - Statitics
+     - Rollback
+     - clone
+     - template
+    - Statistics gathering and grafana dashbaords
+    - Self-healing
+      - Storage failure recovery
+      - auto restart of VM and containers
+  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-5)
+
 
 # Telegram
 
