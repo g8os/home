@@ -58,11 +58,10 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
 - July 14, 2017: [v1.1.0-alpha-6](milestones/1.1.0-alpha-6.md)
   - Introduces:
     - OpenvCloud
-     - Statitics
-     - Rollback
-     - clone
-     - template
-    - Statistics gathering and grafana dashbaords
+       - Statitics
+       - Rollback
+       - clone
+       - template
     - Self-healing
       - Storage failure recovery
       - auto restart of VM and containers
