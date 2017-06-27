@@ -1,6 +1,7 @@
 # First interaction with Zero-OS
 
 - @todo: explain how to get the ISO file for VB
+- @todo: add documentation on how to use the IPv4 Auto-Assign section in ZT
 - Get onto a Ubuntu 16.04 Server
 - Upgrade the system with apt-get
   ```

@@ -1,10 +1,8 @@
 # Create a Flist and Start a Container
 
-@todo: needs review
-
 Zero-OS containers are booted using a flist. A flist is basically a recipe of files and folders with pointers to the actual content of the filesystem with which the container is started.
 
-In this tutorial we will create a flist ourselves, upload it to our hub, and then use it to start a g8os container (aka CoreX) to which we'll connect over ZeroTier.
+In this tutorial we will create a flist ourselves, upload it to the Zero-OS Hub, and then use it to start a Zero-OS container to which we'll connect over ZeroTier management network.
 
 We'll use a simple echo server (https://github.com/luisbebop/echo-server) written in Go to illustrate creating a flist.
 
@@ -20,47 +18,69 @@ Creating the tar archive can be achieved by manually assembling the needed files
 
 So we need to compile our Go server and create a tar archive of the executable.
 
-Start your js Docker container (see https://github.com/Jumpscale/developer) and SSH into it over your ZeroTier network. Then execute the following commands:
+Start your JS9 Docker container (see https://github.com/Jumpscale/developer) and SSH into it over your ZeroTier network. Then execute the following commands.
+
+First install Go via the interactive JumpScale shell:
 ```shell
-# install go via jumpscale:
-root@js82:~# jspython -c "from JumpScale import j; j.tools.cuisine.local.development.golang.install()"
-# get the echo server
-root@js82:~# go get github.com/luisbebop/echo-server
-root@js82:~# cd /opt/go/proj/src/github.com/luisbebop/echo-server/
-root@js82:/opt/go/proj/src/github.com/luisbebop/echo-server# go build
-root@js82:/opt/go/proj/src/github.com/luisbebop/echo-server# ls
+js9
+j.tools.prefab.local.development.golang.install()
+exit
+```
+
+Prepare the Go compiler:
+```bash
+mkdir -p /usr/local/go
+export GOROOT=/opt/go/root/
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=/opt/go/proj
+```
+
+Get and build the echo server:
+```bash
+go get github.com/luisbebop/echo-server
+cd /opt/go/proj/src/github.com/luisbebop/echo-server/
+go build
+ls
 Dockerfile  README.md  echo-server  main.go  main_test.go
-# now create the tar
-root@js82:/opt/go/proj/src/github.com/luisbebop/echo-server# mkdir -p /optvar/data/images/echo-server/usr/bin
-root@js82:/opt/go/proj/src/github.com/luisbebop/echo-server# cp echo-server /optvar/data/images/echo-server/usr/bin
-root@js82:/opt/go/proj/src/github.com/luisbebop/echo-server# cd /optvar/data/images/echo-server
-root@js82:/opt/go/proj/src/github.com/luisbebop/echo-server# tar -cvzf /optvar/data/images/echo-server.tar.gz usr
+```
+
+Now create the tar:
+```bash
+mkdir -p /optvar/data/images/echo-server/usr/bin
+cp echo-server /optvar/data/images/echo-server/usr/bin
+cd /optvar/data/images/echo-server
+tar -cvzf /optvar/data/images/echo-server.tar.gz usr
 ```
 
 ### Publishing the flist onto hub.gig.tech
 
-Okay we have our tar archive (```/optvar/data/images/echo-server.tar.gz``` in your js Docker container, or ```~/gig/data/images/echo-server.tar.gz``` in your user account), now lets get it published so we can use it to start a container.
+Okay we have our tar archive (```/optvar/data/images/echo-server.tar.gz``` in your JS9 Docker container, or ```~/gig/data/images/echo-server.tar.gz``` in your user account), now let's get it published so we can use it to start a container.
 
-#### Method 1: Uploading your tar.gz archive via the [web interface](https://hub.gig.tech)
+Navigate your browser to https://hub.gig.tech. Press the **Upload my file** button. The first time you press it, you will be redirected to [ItsYou.online](https://itsyou.online) to authenticate yourself. Then you'll need to press it again to select the `tar.gz` archive for upload.
 
-Navigate your browser to https://hub.gig.tech. Press the **Upload my file** button. The first time you press it, you will be redirected to [itsyou.online](https://itsyou.online) to authenticate yourself. Then you'll need to press it again to select the tar.gz archive for upload.
-
-When you uploaded your tar.gz file you'll see something like to following:
+When you uploaded your `tar.gz` file you'll see something like to following:
 ![Upload successfully](./flist.png)
 
 As a result the flist will be generated based on the tar you uploaded.
 
-#### Method 2: (Recommended) Sync a local ARDB to the central one
-@todo: Needs to be completed as soon as the infrastructure is in place
-
 ## Step 2: Bring up your container
 
-Next will use the Zero-OS Orchestrator REST API to bring up a container using our brand new flist.
+Two options:
+- Interacting directly with a Zero-OS node
+- [Deploy the container by using the Zero-Orchestrator](#deploy-the-container-by-using-the-zero-orchestrator)
 
-In order to use this REST API you need to add a Zero-OS Orchestrator to your JumpScale Docker container.
+Below we discuss the second option.
+
+### Deploy the container by using the Zero-Orchestrator
+
+@todo needs review
+
+Next will use the Zero-OS Orchestrator RESTfull API to bring up a container using our brand new flist.
+
+In order to use this RESTful API you need to add a Zero-OS Orchestrator to your JumpScale Docker container.
 
 This is achieved using the `js_builder_js82_zerotier.sh` script available from the [Jumpscale/developer](https://github.com/Jumpscale/developer/) repository on GitHub:
-```
+```shell
 curl -sL https://raw.githubusercontent.com/Jumpscale/developer/master/scripts/js_builder_js82_zerotier.sh | bash -s <your-ZeroTier-network-ID>
 ```
 
@@ -68,12 +88,12 @@ Once you have your Zero-OS Orchestrator up, you need to add nodes. ![Zero-OS RES
 
 The only thing you need to do is to boot your nodes into the ZeroTier network with which you created your js Docker container and installed your resource pool. See [Booting Zero-OS](https://gig.gitbooks.io/g8os/booting/booting.html) and [Zero-OS Bootstrap Service](https://gig.gitbooks.io/g8os/bootstrap/bootstrap.html) for more information on how to boot your nodes into your ZeroTier network.
 
-Let's take a look at the API to learn how we can start a container on a g8os node:
+Let's take a look at the API to learn how we can start a container on a Zero-OS node:
 https://rawgit.com/zero-os/0-orchestrator/1.1.0-alpha/raml/api.html#nodes__nodeid__containers_post
 
 Before we can start the container, we need to decide on which node in our resource pool we are gonna deploy it. So let's list up the nodes in our resource pool:
-```
-root@js82:~# curl -sL http://192.168.193.212:8080/nodes | underscore print --color
+```shell
+curl -sL http://192.168.193.212:8080/nodes | underscore print --color
 [
   { "hostname": "", "id": "2c600cbc2545", "status": "running" },
   { "hostname": "", "id": "2c600ccd2ae9", "status": "running" },
@@ -94,7 +114,7 @@ More information on the complete API can be found on https://rawgit.com/zero-os/
 Okay the container is created, now you need to allow it into your ZeroTier network. Please notice the IP address your container receives in the ZeroTier network. In my case it was **192.168.193.96**. So let's test if the echo-server in the container is working using the ZeroTier IP address:
 
 ```shell
-geert@DESKTOP-PRP34CJ:/mnt/c/Users/geert/gig/code/github/jumpscale/developer/scripts$ telnet 192.168.193.96 8800
+telnet 192.168.193.96 8800
 Trying 192.168.193.96...
 Connected to 192.168.193.96.
 Escape character is '^]'.
