@@ -91,6 +91,7 @@ The only thing you need to do is to boot your nodes into the ZeroTier network wi
 Let's take a look at the API to learn how we can start a container on a Zero-OS node:
 https://rawgit.com/zero-os/0-orchestrator/1.1.0-alpha/raml/api.html#nodes__nodeid__containers_post
 
+
 Before we can start the container, we need to decide on which node in our resource pool we are gonna deploy it. So let's list up the nodes in our resource pool:
 ```shell
 curl -sL http://192.168.193.212:8080/nodes | underscore print --color
@@ -106,7 +107,7 @@ curl -sL http://192.168.193.212:8080/nodes | underscore print --color
 We select node **0cc47a3b3d6a** to run our container. So next step is to create the container using the following post request:
 ![post via postman](new-container.png)
 
-More information on the complete API can be found on https://rawgit.com/zero-os/0-orchestrator/master/raml/api.html
+More information on the complete API can be found on [zero-os/0-orchestrator/master/raml/api.html](https://htmlpreviewer.github.io/?https://raw.githubusercontent.com/zero-os/0-orchestrator/master/raml/api.html)
 
 > Note:
 > It is best to use a separate ZeroTier network for this exercise. Makes it simpler to identify the container that is joining the network.
