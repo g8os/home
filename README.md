@@ -49,10 +49,10 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
     - vdisk rollback
     - All components accessed only over tls and authenticated over ItsYou.online
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-4)
-- June 30, 2017: [v1.1.0-alpha-5](milestones/1.1.0-alpha-5.md)
+- July 7, 2017: [v1.1.0-alpha-5](milestones/1.1.0-alpha-5.md)
   - Introduces:
     - OpenvCloud on top of Jumpscale9
-    - Statistics gathering and grafana dashbaords
+    - Statistics gathering and grafana dashboards
     - Persistent zerotier ips for zero-os and containers
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-5)
 - July 14, 2017: [v1.1.0-alpha-6](milestones/1.1.0-alpha-6.md)
