@@ -58,7 +58,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
 - July 14, 2017: [v1.1.0-alpha-6](milestones/1.1.0-alpha-6.md)
   - Introduces:
     - OpenvCloud
-       - Statitics
+       - Statistics
        - Rollback
        - clone
        - template
