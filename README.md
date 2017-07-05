@@ -84,10 +84,10 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
        - Import / Export
     - 0-orchestration
      - Self healing
-       - Storage failure scenarios Tlog storage cluster
        - Health checks and Self healing Part three
      - Publish template to hub
      - Storage statistics
+     - Node reboot support
     - 0-disk
      - Fix remaining FR's and bugs
     - AYS template support for Gateway API's on OpenvCloud
