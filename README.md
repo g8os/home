@@ -83,14 +83,14 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
        - Clone, Template
        - Import / Export
     - 0-orchestration
-     - Self healing
-       - Health checks and Self healing Part three
-     - Publish template to hub
-     - Storage statistics
-     - Node reboot support
+      - Self healing
+        - Health checks and Self healing Part three
+      - Publish template to hub
+      - Storage statistics
+      - Node reboot support
     - 0-disk
-     - Fix remaining FR's and bugs
-    - AYS template support for Gateway API's on OpenvCloud
+      - Fix remaining FR's and bugs
+      - AYS template support for Gateway API's on OpenvCloud
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-beta-1)
 
 # Telegram
