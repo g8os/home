@@ -58,8 +58,6 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
 - July 21, 2017 (code complete) July 26, 2017 (release): [v1.1.0-alpha-7](milestones/1.1.0-alpha-7.md)
   - Introduces:
     - OpenvCloud
-      - Statistics
-      - Rollback
       - Health checks
     - 0-orchestrator
       - Health checks and Self healing Part one
