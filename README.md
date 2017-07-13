@@ -27,46 +27,69 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
   - Repository for flists and vdisk templates
   - Publicly hosted on https://hub.gig.tech
 
-# Release schedule
-
+# Previous releases
+- June 16, 2017: **[v1.1.0-alpha-4](release_notes/1.1.0-alpha-4.md)** [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/tree/1.1.0-alpha-4), [0-Core](https://github.com/zero-os/0-core/tree/1.1.0-alpha-4), [0-FS](https://github.com/zero-os/0-fs/tree/1.1.0-alpha-4), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/tree/1.1.0-alpha-4)
+  - Introduces: Redundant vDisks, vDisk rollback, Security
+- June 6, 2017: **[v1.1.0-alpha-3](release_notes/1.1.0-alpha-3.md)** : [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-3), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-3), [0-FS](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-3), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/releases/tag/v1.1.0-alpha-3)
+  - Introduces: Basic integration with OpenvCloud, Zero-OS Gateway, JumpScale 9
+- May 12, 2017: **v1.1.0-alpha-2**: [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [0-FS](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2), [Zero-OS Rest API](https://github.com/zero-os/0-rest-api/releases/tag/v1.1.0-alpha-2)
+  - Introduces: Hub, Rest API, 0-disk
 - Dec 7, 2016: [v0.9.0](https://github.com/zero-os/0-core/releases/tag/v0.9.0)
   - First usable beta version of the Zero-OS
-- May 12, 2017: **v1.1.0-alpha-2**: [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [0-FS](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2), [Zero-OS Rest API](https://github.com/zero-os/0-rest-api/releases/tag/v1.1.0-alpha-2)
-  - Introduces
-    - Hub
-    - Rest API (with **v8.2.0rc1** of [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1))
-    - NBD Block Storage server
-  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-2)
-- June 6, 2017: **[v1.1.0-alpha-3](release_notes/1.1.0-alpha-3.md)** : [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-3), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-3), [0-FS](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-3), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/releases/tag/v1.1.0-alpha-3)
-  - Introduces
-    - Basic integration with OpenvCloud
-    - Zero-OS Gateway
-    - Upgrade of service to JumpScale 9
-  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-3)
-- June 16, 2017: **[v1.1.0-alpha-4](release_notes/1.1.0-alpha-4.md)** [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/tree/1.1.0-alpha-4), [0-Core](https://github.com/zero-os/0-core/tree/1.1.0-alpha-4), [0-FS](https://github.com/zero-os/0-fs/tree/1.1.0-alpha-4), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/tree/1.1.0-alpha-4)
-  - Introduces:
-    - Redundant vdisks
-    - vdisk rollback
-    - All components accessed only over tls and authenticated over ItsYou.online
-  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-4)
+
+# Release schedule
 - July 7, 2017: [v1.1.0-alpha-5](milestones/1.1.0-alpha-5.md)
   - Introduces:
     - OpenvCloud on top of Jumpscale9
     - Statistics gathering and grafana dashboards
     - Persistent zerotier ips for zero-os and containers
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-5)
-- July 14, 2017: [v1.1.0-alpha-6](milestones/1.1.0-alpha-6.md)
+- July 14, 2017 (code complete) July 19, 2017 (release): [v1.1.0-alpha-6](milestones/1.1.0-alpha-6.md)
   - Introduces:
     - OpenvCloud
        - Statistics
        - Rollback
-       - clone
-       - template
-    - Self-healing
-      - Storage failure recovery
-      - auto restart of VM and containers
-  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-5)
-
+    - 0-orchestrator
+      - Health check and self healing infrastructure
+      - Statistics API
+    - 0-disk
+      - Storage failure support
+  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-6)
+- July 21, 2017 (code complete) July 26, 2017 (release): [v1.1.0-alpha-7](milestones/1.1.0-alpha-7.md)
+  - Introduces:
+    - OpenvCloud
+      - Health checks
+    - 0-orchestrator
+      - Health checks and Self healing Part one
+    - 0-disk
+      - Storage failure support
+  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-7)
+- July 28, 2017 (code complete) August 2, 2017 (release): [v1.1.0-alpha-8](milestones/1.1.0-alpha-8.md)
+  - Introduces:
+    - OpenvCloud
+       - Gateway API's on cloudspace
+    - 0-orchestrator
+      - Health checks and Self healing Part two
+    - 0-disk
+      - Statistics
+      - Tlog storage failures
+      - Deduped referencing
+  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-8)
+- August 11, 2017 (code complete) August 18, 2017 (release): [v1.1.0-beta-1](milestones/1.1.0-beta-1.md)
+  - Introduces:
+    - OpenvCloud
+       - Clone, Template
+       - Import / Export
+    - 0-orchestration
+      - Self healing
+        - Health checks and Self healing Part three
+      - Publish template to hub
+      - Storage statistics
+      - Node reboot support
+    - 0-disk
+      - Fix remaining FR's and bugs
+      - AYS template support for Gateway API's on OpenvCloud
+  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-beta-1)
 
 # Telegram
 
