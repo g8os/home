@@ -53,7 +53,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
       - Health check and self healing infrastructure
       - Statistics API
     - 0-disk
-      - Storage failure support
+      - Import / export / clone / template
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-6)
 - July 21, 2017 (code complete) July 26, 2017 (release): [v1.1.0-alpha-7](milestones/1.1.0-alpha-7.md)
   - Introduces:
