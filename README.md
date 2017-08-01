@@ -55,7 +55,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
     - 0-disk
       - Import / export / clone / template
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-6)
-- July 21, 2017 (code complete) July 26, 2017 (release): [v1.1.0-alpha-7](milestones/1.1.0-alpha-7.md)
+- August 03, 2017 (code complete) August 05, 2017 (release): [v1.1.0-alpha-7](milestones/1.1.0-alpha-7.md)
   - Introduces:
     - OpenvCloud
       - Health checks
@@ -65,7 +65,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
       - Backup storage cluster
       - Storage failure support
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-7)
-- July 28, 2017 (code complete) August 2, 2017 (release): [v1.1.0-alpha-8](milestones/1.1.0-alpha-8.md)
+- August 10, 2017 (code complete) August 12, 2017 (release): [v1.1.0-alpha-8](milestones/1.1.0-alpha-8.md)
   - Introduces:
     - OpenvCloud
        - Gateway API's on cloudspace
@@ -76,7 +76,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
       - Tlog storage failures
       - Deduped referencing
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-8)
-- August 11, 2017 (code complete) August 18, 2017 (release): [v1.1.0-beta-1](milestones/1.1.0-beta-1.md)
+- August 25, 2017 (code complete) August 27, 2017 (release): [v1.1.0-beta-1](milestones/1.1.0-beta-1.md)
   - Introduces:
     - OpenvCloud
        - Clone, Template
