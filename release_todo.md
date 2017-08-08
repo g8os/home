@@ -9,6 +9,7 @@
   - 0-orchestrator
 - Create milestone flists.
   - 0-disk
+  - 0-statscollector
   - ovs
   - zero-os-gw
 - Update Home repo: Move the release from `Release schedule` section to `Previous Releases`
