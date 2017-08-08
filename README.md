@@ -53,7 +53,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
       - Health check and self healing infrastructure
       - Statistics API
     - 0-disk
-      - Import / export / clone / template
+      - Space-Optimized Storage Type
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-6)
 - August 03, 2017 (code complete) August 05, 2017 (release): [v1.1.0-alpha-7](milestones/1.1.0-alpha-7.md)
   - Introduces:
@@ -62,17 +62,15 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
     - 0-orchestrator
       - Health checks and Self healing Part one
     - 0-disk
-      - Backup storage cluster
-      - Storage failure support
+      - Replace configuration file with etcd
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-7)
 - August 10, 2017 (code complete) August 12, 2017 (release): [v1.1.0-alpha-8](milestones/1.1.0-alpha-8.md)
   - Introduces:
-    - OpenvCloud
-       - Gateway API's on cloudspace
     - 0-orchestrator
       - Health checks and Self healing Part two
     - 0-disk
       - Statistics
+      - import/export of vdisks
       - Tlog storage failures
       - Deduped referencing
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-8)
