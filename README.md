@@ -28,7 +28,13 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
   - Publicly hosted on https://hub.gig.tech
 
 # Previous releases
-- June 16, 2017: **[v1.1.0-alpha-4](release_notes/1.1.0-alpha-4.md)** [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/tree/1.1.0-alpha-4), [0-Core](https://github.com/zero-os/0-core/tree/1.1.0-alpha-4), [0-FS](https://github.com/zero-os/0-fs/tree/1.1.0-alpha-4), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/tree/1.1.0-alpha-4)
+- August 09, 2017: This release is a combinaison of the milestone **[1.1.0-alpha-6 and 1.1.0-alpha-7](release_notes/1.1.0-alpha-7.md)**:
+[0-Initramfs Builder](https://github.com/zero-os/0-initramfs/tree/1.1.0-alpha-7), [0-Core](https://github.com/zero-os/0-core/tree/1.1.0-alpha-7), [0-FS](https://github.com/zero-os/0-fs/tree/1.1.0-alpha-7), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/tree/1.1.0-alpha-7)
+
+- July 7, 2017: **[v1.1.0-alpha-5](release_notes/1.1.0-alpha-5.md)**:
+[0-Initramfs Builder](https://github.com/zero-os/0-initramfs/tree/1.1.0-alpha-5), [0-Core](https://github.com/zero-os/0-core/tree/1.1.0-alpha-5), [0-FS](https://github.com/zero-os/0-fs/tree/1.1.0-alpha-5), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/tree/1.1.0-alpha-5)
+
+- June 16, 2017: **[v1.1.0-alpha-4](release_notes/1.1.0-alpha-4.md)**: [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/tree/1.1.0-alpha-4), [0-Core](https://github.com/zero-os/0-core/tree/1.1.0-alpha-4), [0-FS](https://github.com/zero-os/0-fs/tree/1.1.0-alpha-4), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/tree/1.1.0-alpha-4)
   - Introduces: Redundant vDisks, vDisk rollback, Security
 - June 6, 2017: **[v1.1.0-alpha-3](release_notes/1.1.0-alpha-3.md)** : [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-3), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-3), [0-FS](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-3), [Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/releases/tag/v1.1.0-alpha-3)
   - Introduces: Basic integration with OpenvCloud, Zero-OS Gateway, JumpScale 9
@@ -38,32 +44,6 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
   - First usable beta version of the Zero-OS
 
 # Release schedule
-- July 7, 2017: [v1.1.0-alpha-5](milestones/1.1.0-alpha-5.md)
-  - Introduces:
-    - OpenvCloud on top of Jumpscale9
-    - Statistics gathering and grafana dashboards
-    - Persistent zerotier ips for zero-os and containers
-  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-5)
-- July 14, 2017 (code complete) July 19, 2017 (release): [v1.1.0-alpha-6](milestones/1.1.0-alpha-6.md)
-  - Introduces:
-    - OpenvCloud
-       - Statistics
-       - Rollback
-    - 0-orchestrator
-      - Health check and self healing infrastructure
-      - Statistics API
-    - 0-disk
-      - Space-Optimized Storage Type
-  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-6)
-- August 03, 2017 (code complete) August 05, 2017 (release): [v1.1.0-alpha-7](milestones/1.1.0-alpha-7.md)
-  - Introduces:
-    - OpenvCloud
-      - Health checks
-    - 0-orchestrator
-      - Health checks and Self healing Part one
-    - 0-disk
-      - Replace configuration file with etcd
-  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-7)
 - August 10, 2017 (code complete) August 12, 2017 (release): [v1.1.0-alpha-8](milestones/1.1.0-alpha-8.md)
   - Introduces:
     - 0-orchestrator
