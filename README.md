@@ -44,7 +44,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
   - First usable beta version of the Zero-OS
 
 # Release schedule
-- August 10, 2017 (code complete) August 12, 2017 (release): [v1.1.0-alpha-8](milestones/1.1.0-alpha-8.md)
+- September 9, 2017 (code complete) September 12, 2017 (release): [v1.1.0-alpha-8](milestones/1.1.0-alpha-8.md)
   - Introduces:
     - 0-orchestrator
       - Health checks and Self healing Part two
@@ -54,7 +54,7 @@ All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://
       - Tlog storage failures
       - Deduped referencing
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-alpha-8)
-- August 25, 2017 (code complete) August 27, 2017 (release): [v1.1.0-beta-1](milestones/1.1.0-beta-1.md)
+- September 24, 2017 (code complete) September 26, 2017 (release): [v1.1.0-beta-1](milestones/1.1.0-beta-1.md)
   - Introduces:
     - OpenvCloud
        - Clone, Template
