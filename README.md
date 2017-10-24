@@ -42,7 +42,7 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
   - First usable beta version of the Zero-OS
 
 # Release schedule
-- September 24, 2017 (code complete) September 26, 2017 (release): [v1.1.0-beta-1](milestones/1.1.0-beta-1.md)
+- Novembre 20, 2017 (code complete) November 27, 2017 (release): [v1.1.0-beta-1](milestones/1.1.0-beta-1.md)
   - Introduces:
     - OpenvCloud
        - Clone, Template
@@ -54,6 +54,7 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
       - Storage statistics
       - Node reboot support
     - 0-disk
+      - self-healing
       - Fix remaining FR's and bugs
       - AYS template support for Gateway API's on OpenvCloud
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-beta-1)
