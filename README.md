@@ -22,15 +22,15 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
   - Repository for flists and vdisk templates
   - Publicly hosted on https://hub.gig.tech
 
-
 # Release schedule
+
 - previous releases see [Previous Releases](Previous Releases.md)
 - November 27, 2017 (release): [v1.1.0-beta-1](milestones/1.1.0-beta-1.md)
   - NEED TO CLEANUP in relation to beta2,3,4 : lots of things need to be moved
   - Introduces:
     - OpenvCloud
-       - Clone, Template
-       - Import / Export
+      - Clone, Template
+      - Import / Export
     - 0-orchestration
       - Self healing
         - Health checks and Self healing Part three
@@ -43,15 +43,14 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
       - AYS template support for Gateway API's on OpenvCloud
   - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-beta-1)
 - Dec 2017: beta 2
-    -  [v1.1.0-beta-2](milestones/1.1.0-beta-2.md)
-    - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-beta-2)
+  - [v1.1.0-beta-2](milestones/1.1.0-beta-2.md)
+  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-beta-2)
 - Jan 2018: beta 3
-    -  [v1.1.0-beta-3](milestones/1.1.0-beta-3.md)
-    - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-beta-2)    
+  - [v1.1.0-beta-3](milestones/1.1.0-beta-3.md)
+  - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-beta-2)    
 - Q1 2018: beta 4
     - [v1.1.0-beta-4](milestones/1.1.0-beta-4.md)
     - [Kanban](https://waffle.io/Zero-OS/home?milestone=1.1.0-beta-4)
-
 
 # Telegram
 
