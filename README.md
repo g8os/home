@@ -14,9 +14,25 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
 - [0-fs](https://github.com/zero-os/0-fs):
   - File system for Zero-OS and Zero-OS containers
 - [0-Hub](https://github.com/zero-os/0-hub):
-  - Repository for flists and vdisk templates
+  - Repository for flists
   - Publicly hosted on https://hub.gig.tech
+- [0-stor](https://github.com/zero-os/0-stor):
+  - Storage library used mainly to read and write data onto archive storage in an efficient manner
+  
+  
+# Releases:
+
+- [1.2.0](https://github.com/zero-os/home/blob/master/release_notes/1.2.0.md)
+- [1.1.0-alpha-8](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-8.md)
+- [1.1.0-alpha-7](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-7.md)
+- [1.1.0-alpha-6](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-6.md)
+- [1.1.0-alpha-5](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-5.md)
+- [1.1.0-alpha-4](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-4.md)
+- [1.1.0-alpha-3](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-3.md)
 
 # Telegram
+Public chat, if you want to reach us: https://telegram.me/joinchat/BrOCOUGHeT035il_qrwQ2A
 
-- https://telegram.me/joinchat/BrOCOUGHeT035il_qrwQ2A
+# Produce owner:
+- main: [zaibon](https://github.com/zaibon)
+- backup: [muhamadazmy](https://github.com/muhamadazmy)
