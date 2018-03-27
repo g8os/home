@@ -11,6 +11,9 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
 - [0-core](https://github.com/zero-os/0-core):
   - Init process (0-Core) and container manager (CoreX) of Zero-OS
   - Also contains Python client for 0-Core, for managing containers, disks and networking of a Zero-OS node
+- [0-robot](https://github.com/zero-os/0-robot): 
+  - Distributed live cycle management system 
+  - The robot managed different part of the grid created by the 0-OS nodes
 - [0-fs](https://github.com/zero-os/0-fs):
   - File system for Zero-OS and Zero-OS containers
 - [0-Hub](https://github.com/zero-os/0-hub):
@@ -22,7 +25,7 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
   
 # Releases:
 
-- [1.2.0](https://github.com/zero-os/home/blob/master/release_notes/1.2.0.md)
+- [1.2.0](https://github.com/zero-os/home/blob/master/release_notes/1.2.0.md) : in development
 - [1.1.0-alpha-8](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-8.md)
 - [1.1.0-alpha-7](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-7.md)
 - [1.1.0-alpha-6](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-6.md)
