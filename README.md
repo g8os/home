@@ -25,7 +25,7 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
   
 # Releases:
 
-- [1.2.0](https://github.com/zero-os/home/blob/master/release_notes/1.2.0.md) : in development
+- [1.2.0](https://github.com/zero-os/home/blob/master/release_notes/1.2.0.md) : in development, see waffle:https://waffle.io/Zero-OS/home?milestone=0.5.0,1.2.0
 - [1.1.0-alpha-8](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-8.md)
 - [1.1.0-alpha-7](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-7.md)
 - [1.1.0-alpha-6](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-6.md)
