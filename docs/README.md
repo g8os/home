@@ -13,13 +13,10 @@ Key components:
 - [0-Core](#0-core)
 - [0-FS](#0-fs)
 - [0-Hub](#0-hub)
-- [0-Orchestrator](#0-orchestrator)
-- [0-Disk](#0-disk)
 
-> All documentation has been tested using **v8.2.0rc1** [jumpscale_core8](https://github.com/Jumpscale/jumpscale_core8/tree/v8.2.0rc1) and **v1.1.0-alpha-2** of [0-Initramfs Builder](https://github.com/zero-os/0-initramfs/releases/tag/v1.1.0-alpha-2), [0-Core](https://github.com/zero-os/0-core/releases/tag/v1.1.0-alpha-2), [](https://github.com/zero-os/0-fs/releases/tag/v1.1.0-alpha-2) and [Zero-OS REST API](https://github.com/zero-OS/0-disk/releases/tag/v1.1.0-alpha-2)
 
 <a id="0-initramfs"></a>
-## Zero-OS Initramfs
+## 0-initramfs
 
 0-Initramfs is an assembly of shell scripts for building the Zero-OS Linux kernel and create an 0-initramfs to start 0-Core.
 
@@ -28,9 +25,9 @@ Key components:
 - Getting started: [Getting Started with 0-Initramfs](https://github.com/zero-os/0-initramfs/blob/master/docs/gettingstarted/gettingstarted.md)
 
 <a id="0-core"></a>
-## 0-Core
+## 0-core
 
-0-Core is the Zero-OS replacement for systemd, the init system to bootstrap the user space and manage all processes subsequently.
+0-core is the Zero-OS init process. It is used to bootstrap the user space and manage all processes subsequently.
 
 Interacting with 0-Core is done by sending commands through a Redis, allowing you to manage disks, set-up networks and create containers and start virtual machines.
 
@@ -39,16 +36,16 @@ Interacting with 0-Core is done by sending commands through a Redis, allowing yo
 - Getting started: [Getting Started with 0-Core](https://github.com/zero-os/0-core/blob/master/docs/gettingstarted/README.md)
 
 <a id="0-fs"></a>
-## Zero-OS File System
+## 0-fs
 
-Zero-OS File System is the Zero-OS file system used in containers, which is actually a FUSE file system. Mounting the  is done by using a flist, which is a relatively small RocksDB database file, containing the metadata of the actual files and directories. On accessing a file Zero-OS fetches the required file chunks from a remote store, and caches it locally. This remote store is the Zero-OS Hub, discussed here below.
+Zero-OS File System is the file system used in containers and VM boot disk, which is actually a FUSE file system. Mounting the filesystem is done by using a flist, which is a relatively small RocksDB database file, containing the metadata of the actual files and directories. On accessing a file Zero-OS fetches the required file chunks from a remote store, and caches it locally. This remote store is the Zero-OS Hub, discussed here below.
 
 - GitHub repository: [zero-os/0-fs](https://github.com/zero-os/0-fs)
 - Documentation: [ Documentation](https://github.com/zero-os/0-fs/blob/master/docs/SUMMARY.md)
 - Getting started: [Getting Started with 0-fs](https://github.com/zero-os/0-fs/blob/master/docs/gettingstarted/README.md)
 
 <a id="0-hub"></a>
-## Zero-OS Hub
+## 0-hub
 
 The Zero-OS Hub is where all container images and and vdisk boot images are stored.
 
@@ -56,20 +53,12 @@ The Zero-OS Hub is where all container images and and vdisk boot images are stor
 - Documentation: [Hub Documentation](https://github.com/zero-os/0-hub/blob/master/docs/SUMMARY.md)
 - Getting started: [Getting Started with the Zero-OS Hub](https://github.com/zero-os/0-hub/blob/master/docs/gettingstarted/README.md)
 
-<a id="0-orchestrator"></a>
-## Zero-OS Orchestrator
+<a id="0-robot"></a>
+## 0-robot
 
-The Zero-OS Orchestrator is the REST API server for managing a cluster of Zero-OS nodes.
+The 0-robot is a distributed life cycle management system. It is in the robot that the state of the applications running on 0-os is stored.
+When booting 0-os, a 0-robot will be started automatically on the machine.
 
-- GitHub repository: [zero-os/0-orchestrator](https://github.com/zero-os/0-orchestrator)
-- Documentation: [Zero-OS Orchestrator Documentation](https://github.com/zero-OS/0-orchestrator/blob/master/docs/SUMMARY.md)
-- Getting Started: [Getting Started with Zero-OS Orchestrator](https://github.com/zero-os/0-orchestrator/blob/master/docs/gettingstarted/README.md)
-
-<a id="0-disk"></a>
-## 0-Disk
-
-0-Disk is about the components that allow to create and use block devices (vdisks) from within virtual machines hosted on a Zero-OS node.
-
-- GitHub repository: [zero-os/0-disk](https://github.com/zero-os/0-disk)
-- Documentation: [0-Disk Documentation](https://github.com/zero-os/0-disk/blob/master/docs/SUMMARY.md)
-- Getting Started: [Getting Started with NBD Server](https://github.com/zero-os/0-disk/blob/master/docs/gettingstarted/gettingstarted.md)
+- GitHub repository: [zero-os/0-robot](https://github.com/zero-os/0-robot)
+- Documentation: [0-robot documenation](https://github.com/zero-os/0-robot/blob/master/docs)
+- Getting started: [Getting Started with the Zero-OS Hub](https://github.com/zero-os/0-robot/blob/master/docs/getting_started.md)
