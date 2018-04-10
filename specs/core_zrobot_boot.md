@@ -1,24 +1,15 @@
 
-## core z-robot principles
+## core z-robot boot 
 
 
 - hardcoded boot in z-core (only when certain flag given to boot param)
 - boot an flist in container which provides provisioning for the primitives
 - is the only robot who can access the core-0 redis
 
-### implement core primitives
-
-- zdb
-- vm ubuntu/zos
-- z-gw
 
 ### security of robot step 1 (which is now)
 
 - jwt from IYO from an organization
-
-### specs of the blueprints see
-
-- TODO: *1 specs for the blueprints
 
 ### 3 boot modes
 
