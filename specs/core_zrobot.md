@@ -9,6 +9,10 @@
     - ZOS-GW: the network primitive
 - Starts automatically when ZOS starts with certain flag: TODO:*1?
 
+## boot
+
+- [see boot document](core_zrobot_boot.md)
+
 ## provision = admin mode
 
 - provision needs admin rights (IYO group through JWT)
