@@ -2,7 +2,7 @@
 ## core z-robot principles
 
 
-- hardcoded boot in z-core
+- hardcoded boot in z-core (only when certain flag given to boot param)
 - boot an flist in container which provides provisioning for the primitives
 - is the only robot who can access the core-0 redis
 
@@ -11,7 +11,6 @@
 - zdb
 - vm ubuntu/zos
 - z-gw
-- z-robot
 
 ### security of robot step 1 (which is now)
 
