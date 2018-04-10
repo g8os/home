@@ -1,4 +1,4 @@
-# Zero Node Robot
+# Core z-robot
 
 ## what
 
