@@ -5,16 +5,10 @@
 ```yaml
 services:
     - github.com/zero-os/0-templates/zerodb/0.0.1__zerodbname:
-          node: 'nodename'
-          listenPort: 9900
-          dataDir: '/zerodb/'
-          indexDir: '/zerodb/'
+          nodePort: 9900
           mode: 'direct'
           sync: True
-          nodeMountPoint: '/mnt/zdbs/vda'
-          containerMountPoint: '/zerodb/'
-          admin: 'password'
-
+          disk: '/mnt/zdbs/vda'
 actions:
     - template: 'github.com/zero-os/0-templates/zerodb/0.0.1'
       service: 'zerodbname'
@@ -27,7 +21,6 @@ actions:
 ```yaml
 services:
     - github.com/zero-os/0-templates/vm/0.0.1__vmname:
-          node: 'nodename'
           memory: 128
           cpu: 2
           nics:
@@ -56,7 +49,6 @@ actions:
 ```yaml
 services:
     - github.com/zero-os/0-templates/gateway/0.0.1__gatewayname:
-            node: 'nodename'
             domain: 'mydomain'
             hostname: 'gwhostname'
             nics:
