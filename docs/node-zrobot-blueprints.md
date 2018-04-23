@@ -1,22 +1,24 @@
-# Primitives Blueprints (NOT OK: NEEDS UPDATE):
+# Primitives Blueprints:
 
-## ZeroDB
+## Namespace
 
 ```yaml
 services:
-    - github.com/zero-os/0-templates/zerodb/0.0.1__zerodbname:
-          nodePort: 9900
-          mode: 'direct'
-          sync: True
-          disk: '/mnt/zdbs/vda'
+    - github.com/zero-os/0-templates/namespace/0.0.1__one:
+          size: 100
+          zerodb: 'zerodb'
+          secret: 'password'
+          
 actions:
-    - template: 'github.com/zero-os/0-templates/zerodb/0.0.1'
-      service: 'zerodbname'
+    - template: 'github.com/zero-os/0-templates/namespace/0.0.1'
+      service: 'one'
       actions: ['install']
 
 ```
 
 ## VM
+
+VM using bootable ubuntu flist:
 
 ```yaml
 services:
