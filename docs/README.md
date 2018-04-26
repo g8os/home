@@ -5,7 +5,7 @@ Zero-OS is a stateless and lightweight Linux operating system designed for clust
 - Zero-OS is stateless by not needing any locally stored data, not even Zero-OS system files
 - Zero-OS is lightweight by only containing the components required to securely run and manage containers and virtual machines
 
-See [Getting Started with Zero-OS](gettingstarted/gettingstarted.md) for the recommended path to quickly get up and running with Zero-OS.
+See [Getting Started with Zero-OS](https://github.com/zero-os/0-core/blob/master/docs/gettingstarted/README.md) for the recommended path to quickly get up and running with Zero-OS.
 
 Key components:
 
