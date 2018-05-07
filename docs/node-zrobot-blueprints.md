@@ -30,8 +30,8 @@ services:
           nics:
             - id: 1000
               type: 'vxlan'
-              macaddress: '7a:0d:05:75:cf:7f'
-          flist: 'https://hub.gig.tech/gig-official-apps/ubuntu-xenial-bootable.flist'
+              hwaddr: '7a:0d:05:75:cf:7f'
+          flist: 'f https://hub.gig.tech/gig-bootable/ubuntu-xenial-bootable.flist'
           vnc: 5300
           ports:
             - name: 'ssh'
@@ -63,12 +63,12 @@ services:
           nics:
             - id: 1000
               type: 'vxlan'
-              macaddress: '7a:0d:05:75:cf:7f'
+              hwaddr: '7a:0d:05:75:cf:7f'
           ipxeUrl: 'https://bootstrap.gig.tech/ipxe/development/0/development'
           vnc: 5300
           ports:
             - name: 'ssh'
-              source: 21
+              source: 2222
               target: 22
           tags:
             - 'production'
@@ -122,8 +122,8 @@ services:
                 cidr: 192.168.112.22/24
             httpproxies:
               - host: 192.168.58.22
-                types: [http, https]
-                destinations: [192.168.58.11]
+                types: ['http', 'https']
+                destinations: ['http://192.168.58.11:8080']
                 name: 'proxyone'
             portforwards:
               - protocols:
