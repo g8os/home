@@ -31,6 +31,7 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
 ## Previous:
 - 0-robot [v0.6.0](https://github.com/zero-os/0-robot/releases/tag/v0.5.0)
 - 0-robot [v0.5.0](https://github.com/zero-os/0-robot/releases/tag/v0.5.0)
+- 0-os [1.2.2](https://github.com/zero-os/0-core/releases/tag/v1.2.2)
 - 0-os [1.2.1](https://github.com/zero-os/0-core/releases/tag/v1.2.1)
 - 0-os [1.2.0](https://github.com/zero-os/0-core/releases/tag/v1.2.0)
 - 0-os [1.1.0-alpha-8](https://github.com/zero-os/home/blob/master/release_notes/1.1.0-alpha-8.md)
