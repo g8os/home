@@ -2,6 +2,8 @@
 
 ## Namespace
 
+To create namespace `one` using zerodb service `zerodb`
+
 ```yaml
 services:
     - github.com/zero-os/0-templates/namespace/0.0.1__one:
@@ -32,10 +34,14 @@ services:
           flist: 'https://hub.gig.tech/gig-official-apps/ubuntu-xenial-bootable.flist'
           vnc: 5300
           ports:
-            - '80:80'
-          media:
-            - type: 'disk'
-              url: 'file://path/to/disk.qcow2'
+            - name: 'ssh'
+              source: 21
+              target: 22
+          configs:
+            - name: 'key'
+              path: '/root/.ssh/authorized_keys'
+              content: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCXIQPBfjjbglhTbJ58Z23izWoZ5KZwefw'
+              
           tags:
             - 'production'
 
@@ -46,6 +52,33 @@ actions:
 
 ```
 
+
+Zeroos VM:
+
+```yaml
+services:
+    - github.com/zero-os/0-templates/vm/0.0.1__vmname:
+          memory: 128
+          cpu: 2
+          nics:
+            - id: 1000
+              type: 'vxlan'
+              macaddress: '7a:0d:05:75:cf:7f'
+          ipxeUrl: 'https://bootstrap.gig.tech/ipxe/development/0/development'
+          vnc: 5300
+          ports:
+            - name: 'ssh'
+              source: 21
+              target: 22
+          tags:
+            - 'production'
+
+actions:
+    - template: 'github.com/zero-os/0-templates/vm/0.0.1'
+      service: 'vmname'
+      actions: ['install']
+
+```
 ## Gateway
 
 ```yaml
@@ -53,7 +86,7 @@ services:
     - github.com/zero-os/0-templates/gateway/0.0.1__gatewayname:
             domain: 'mydomain'
             hostname: 'gwhostname'
-            nics:
+            networks:
             - type: vlan
               id: "0"
               name: "public"
@@ -63,7 +96,6 @@ services:
             - type: vxlan
               id: "100"
               name: "private"
-              zerotierbridge: a09acf02331d4330
               dhcpserver:
                 nameservers:
                 - 8.8.8.8
@@ -92,6 +124,7 @@ services:
               - host: 192.168.58.22
                 types: [http, https]
                 destinations: [192.168.58.11]
+                name: 'proxyone'
             portforwards:
               - protocols:
                   - tcp
@@ -99,6 +132,7 @@ services:
                 srcip: '192.168.58.22'
                 dstport: 9090
                 dstip: '192.168.58.60'
+                name: 'forwardone'
 actions:
     - template: 'github.com/zero-os/0-templates/gateway/0.0.1'
       service: 'gatewayname'
