@@ -11,24 +11,24 @@ The first step to take in order to become a farmer is to register on [ItsYouOnli
 To do so, head to http://itsyou.online/ and follow the sign-in procedure.
 
 #### Create an organization
-A farm is link to an organization on IYO, so after you register yourself, you also need to create an organiztion for your farm.
+A farm links to an organization on IYO, so after you register yourself, you also need to create an organiztion for your farm.
 
 #### Register as a farmer
 Head to https://capacity.threefoldtoken.com and click on the top right button `Register a farm` to register your farm.  
 The form has 3 fields:
 - The name of your farm: this can be anything, the name will be displayed next to your node in the listing of the capacity
-- Organization: the global ID of the organization you created in the previous step.
-- a TFT wallet address: optionally you can also link a tft wallet address to your farm.
+- Organization: the global ID of the organization you created in the previous step
+- a TFT wallet address: optionally you can also link a tft wallet address to your farm
 
 The result of your registration will be a token. Make sure to copy this token and keep it, cause you will need it later in the process of setting up your nodes.
 
 
 ### Setup your farm
-Still in development. We are planning to also offer farmers with a robot that will manage all the nodes in their farm.
-This robot will be able to turn on/off the nodes so the farm stays as green as possible, easily configure the kernel the node are booting, and many more useful features. Stays tuned
+Still in development. We are planning to also offer farmers a robot that will manage all the nodes in their farm.
+This robot will be able to turn on/off the nodes so the farm stays as green as possible, easily configure the kernel to boot the node, and many more useful features. Stay tuned
 
 ### Configure your nodes
-#### Download the 0-OS kernel for you nodes
+#### Download the 0-OS kernel for your nodes
 
 Go to https://bootstrap.gig.tech/generate to create the kernel image you need to boot your node.
 The generaor will guide you though the steps.
