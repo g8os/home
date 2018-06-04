@@ -25,10 +25,12 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
   
 # Releases:
 ## Next: 
-- waffle: https://waffle.io/Zero-OS/home?milestone=0.7.1,1.3.0
-- 0-robot [v0.7.1](https://github.com/zero-os/0-robot/milestone/8)
-- 0-os [1.3.0](https://github.com/zero-os/0-core/milestone/26)
+- waffle: https://waffle.io/Zero-OS/home?milestone=0.7.2,0.8.0,1.3.1,1.4.0
+- 0-robot [v0.8.0](https://github.com/zero-os/0-robot/milestone/9)
+- 0-os [1.4.0](https://github.com/zero-os/0-core/milestone/29)
 ## Previous:
+- 0-robot[0.7.1](https://github.com/zero-os/0-robot/releases/tag/v0.7.1)
+- 0-os [1.3.0](https://github.com/zero-os/0-core/releases/tag/v1.3.0)
 - 0-robot [v0.7.0](https://github.com/zero-os/0-robot/releases/tag/v0.7.0)
 - 0-robot [v0.6.0](https://github.com/zero-os/0-robot/releases/tag/v0.5.0)
 - 0-robot [v0.5.0](https://github.com/zero-os/0-robot/releases/tag/v0.5.0)
