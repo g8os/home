@@ -32,7 +32,7 @@ This robot will be able to turn on/off the nodes so the farm stays as green as p
 
 Go to https://bootstrap.gig.tech/generate to create the kernel image you need to boot your node.
 The generaor will guide you though the steps.
-- **Step 1 Choose the 0-OS version**: The current lastest release of 0-os is `v1.2.2`
+- **Step 1 Choose the 0-OS version**: The current lastest release of 0-os is `v1.3.0`
 - **Step 2 Choose the zerotier network**: To make things easy for now, all the nodes will belong to the same zerotier network.
 The network ID of this network is: `c7c8172af1f387a6`
 - **Step3 Custom kernel parameters**: In this step you will link your farmer id with your node, so in the capacity directory, we can see which nodes belongs to which farmer.   
