@@ -8,8 +8,8 @@ Here is how to do:
 2. register as a farmer: check the documentation [how to become a farmer](README.md#register-as-a-farmer)
 3. run this command on your nodes: 
 ```
-sudo zbundle -id capacity -e FARMER_ID={FARMER_ID} https://hub.gig.tech/zaibon/zbundle_capacity.flist
+sudo zbundle -id capacity -e FARMER_ID={FARMER_ID} https://hub.gig.tech/gig-official-apps/zbundle_capacity.flist
 ```
 `{FARMER_ID}` being the ID received in step 2 after you register as a farmer
 
-4. once the zbundle is done registering the capacity, you should see you nodes capacity at: https://capacity.threefoldtoken.com/
+4. The zbundle will start a long running process that register the capcity of your node every 2hours. You should see you nodes capacity showing up at: https://capacity.threefoldtoken.com/
