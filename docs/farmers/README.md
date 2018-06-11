@@ -19,14 +19,17 @@ In order to create such an ItsYou.online organization you need an ItsYou.online 
 Once logged in to your ItsYou.online account, also creating an ItsYou.online organization is simple.
 
 Click **Organization** from the **Profile** menu in the top right corner:
-![](https://raw.githubusercontent.com/zero-os/home/master/docs/farmers/images/iyo-organizations.png)
+![](images/iyo-organizations.png)
 
 Now click **+ CREATE NEW**:
-![](https://raw.githubusercontent.com/zero-os/home/master/docs/farmers/images/iyo-create-new-org.png)
+![](images/iyo-create-new-org.png)
 
 And finally specify the name of the new ItsYou.online organization and click **CREATE**:
-![](https://raw.githubusercontent.com/zero-os/home/master/docs/farmers/images/iyo-create-new-org2.png)
+![](images/iyo-create-new-org2.png)
 
+> For the name of the ItsYou.online organization only lower case characters, numbers or spaces are allowed. 
+
+> The name of ItsYou.online organization needs to be globally unique, and therefor also referenced to as the **Global ID** of the ItsYou.online organization.
 
 <a id='register'></a>
 
