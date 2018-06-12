@@ -29,6 +29,7 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
 - 0-robot [v0.8.0](https://github.com/zero-os/0-robot/milestone/9)
 - 0-os [1.4.0](https://github.com/zero-os/0-core/milestone/29)
 ## Previous:
+- 0-robot[0.7.2](https://github.com/zero-os/0-robot/releases/tag/v0.7.2)
 - 0-robot[0.7.1](https://github.com/zero-os/0-robot/releases/tag/v0.7.1)
 - 0-os [1.3.0](https://github.com/zero-os/0-core/releases/tag/v1.3.0)
 - 0-robot [v0.7.0](https://github.com/zero-os/0-robot/releases/tag/v0.7.0)
