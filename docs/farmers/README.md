@@ -52,7 +52,7 @@ The result of your registration will be a JSON Web Token (JWT), which is your **
 Go to https://bootstrap.gig.tech/generate to create the kernel image you need to boot your node.
 The generator will guide you though the steps.
 
-- **Step 1 Choose the Zero-OS version**: The current latest release of Zero-OS is `v1.4.0`
+- **Step 1 Choose the Zero-OS version**: The current latest release of Zero-OS is `v1.4.1`
 - **Step 2 Choose the ZeroTier network**: To make things easy for now, all the nodes need to be connected to the same ZeroTier network. The ZeroTier network ID of this network is: `c7c8172af1f387a6`
 - **Step3 Custom kernel parameters**: In this step you will link your farmer ID with your node, so in the capacity directory, we can see which nodes belong to which farmer.   
 The argument you need to add in this step is `farmer_id={Farmer_JWT}`, `{Farmer_JWT}` being the JWT token you received during registering your farm earlier.
