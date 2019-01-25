@@ -54,6 +54,6 @@ For more details see the [Introduction to Zero-OS](/docs/README.md) in the [`/do
 # Telegram
 Public chat, if you want to reach us: https://telegram.me/joinchat/BrOCOUGHeT035il_qrwQ2A
 
-# Produce owner:
+# Product owner:
 - main: [zaibon](https://github.com/zaibon)
 - backup: [muhamadazmy](https://github.com/muhamadazmy)
